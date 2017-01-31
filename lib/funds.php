@@ -42,6 +42,13 @@ class funds extends BaseResource {
   public $entity;
 
   /**
+   * @string
+   * The currency of the Fund. 
+   * Currently, this field only accepts the value 'USD'.
+   */
+  public $currency;
+
+  /**
    * @integer
    * The amount held in this Fund that is marked as reserved. 
    * This field is specified as an integer in cents.

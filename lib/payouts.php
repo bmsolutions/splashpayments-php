@@ -97,6 +97,15 @@ class payouts extends BaseResource {
   public $start;
 
   /**
+   * @string
+   * The currency of the amount in this Payout. 
+   * This field is only required when Um is set to ACTUAL.
+   * If this field is not set we will process disbursements for all currencies. 
+   * Currently, this field only accepts the value 'USD'.
+   */
+  public $currency;
+
+  /**
    * @integer
    * The unit of measure for this Payout. 
    * Valid values are: 

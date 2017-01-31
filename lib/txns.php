@@ -61,7 +61,7 @@ class txns extends BaseResource {
 
   /**
    * @string
-   * If the this Transaction is related to another Transaction, then this field is set to the identifier of the other Transaction. 
+   * If this Transaction is related to another Transaction, then this field is set to the identifier of the other Transaction. 
    * For example, if this Transaction is a refund, this field could be set to the identifier of the original sale Transaction.
    */
   public $fortxn;
@@ -106,6 +106,13 @@ class txns extends BaseResource {
   public $expiration;
 
   /**
+   * @string
+   * The currency of the txn. 
+   * Currently, this field only accepts the value 'USD'.
+   */
+  public $currency;
+
+  /**
    * @integer
    * The date on which the Transaction was authorized. 
    * The date is specified as an eight digit string in YYYYMMDD format, for example, '20160120' for January 20, 2016. 
@@ -126,6 +133,27 @@ class txns extends BaseResource {
    * This field is set automatically.
    */
   public $captured;
+
+  /**
+   * @integer
+   * A date indicating when this Transaction was settled. 
+   * This field is set automatically.
+   */
+  public $settled;
+
+  /**
+   * @string
+   * The currency of the settled total. 
+   * This field is set automatically.
+   */
+  public $settledCurrency;
+
+  /**
+   * @integer
+   * The total amount that was settled.  
+   * This field is specified as an integer in cents and is set automatically.
+   */
+  public $settledTotal;
 
   /**
    * @integer

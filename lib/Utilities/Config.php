@@ -48,4 +48,26 @@ class Config {
   public static function getUrl() {
     return self::$url;
   }
+
+  /**
+   * Prepend or remove 'test-' prefix on url for requests
+   * depending on bool $test parameter
+   */
+  public static function setTestMode($test) {
+    $host = parse_url(self::$url, PHP_URL_HOST);
+    if ($test) {
+      // Check if $host doesn't start with 'test-'
+      if (!(strpos($host, 'test-') === 0)) {
+        // Add 'test-' prefix
+        self::$url = 'https://test-' . $host;
+      }
+    }
+    else {
+      // Check if $host starts with 'test-'
+      if (strpos($host, 'test-') === 0) {
+        // Remove 'test-' prefix
+        self::$url = 'https://' . substr($host, 5);
+      }
+    }
+  }
 }

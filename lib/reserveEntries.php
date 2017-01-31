@@ -43,6 +43,12 @@ class reserveEntries extends BaseResource {
 
   /**
    * @string
+   * The identifier of the Fund that this reserveEntries resource relates to.
+   */
+  public $fund;
+
+  /**
+   * @string
    * The identifier of the Entity that this reserveEntries resource relates to.
    */
   public $entity;

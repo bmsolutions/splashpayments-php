@@ -56,6 +56,11 @@ class entryOrigins extends BaseResource {
   public $adjustment;
 
   /**
+   * @string
+   */
+  public $cancellation;
+
+  /**
    * @integer
    */
   public $amount;

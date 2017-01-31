@@ -66,7 +66,8 @@ class accounts extends BaseResource {
   /**
    * @integer
    * Indicates whether the Account is the 'primary' Account for the associated Entity. 
-   * Only one Account associated with each Entity can be the 'primary' Account.
+   * Only one Account associated with each Entity can be the 'primary' Account. 
+   * A value of '1' means the Account is the primary, and a value of '0' means the Account is not the primary.
    */
   public $primary;
 

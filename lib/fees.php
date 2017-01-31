@@ -132,6 +132,14 @@ class fees extends BaseResource {
   public $amount;
 
   /**
+   * @string
+   * The currency of the amount. 
+   * This field is only required when Um is set to 'ACTUAL'. 
+   * Currently, this field only accepts the value 'USD'.
+   */
+  public $currency;
+
+  /**
    * @integer
    * Whether this resource is marked as inactive. A value of '1' means inactive, and a value of '0' means active.
    */

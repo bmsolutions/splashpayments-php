@@ -63,7 +63,17 @@ class chargebacks extends BaseResource {
   /**
    * @integer
    */
+  public $representedTotal;
+
+  /**
+   * @integer
+   */
   public $cycle;
+
+  /**
+   * @string
+   */
+  public $currency;
 
   /**
    * @string
@@ -107,6 +117,11 @@ class chargebacks extends BaseResource {
 
   /**
    * @integer
+   */
+  public $status;
+
+  /**
+   * @integer
    * Whether this resource is marked as inactive. A value of '1' means inactive, and a value of '0' means active.
    */
   public $inactive;
@@ -117,10 +132,6 @@ class chargebacks extends BaseResource {
    */
   public $frozen;
 
-
-  public function update($params = array()) {
-      throw new \SplashPayments\Exceptions\InvalidRequest('Invalid Action');
-  }
 
   public function delete($params = array()) {
       throw new \SplashPayments\Exceptions\InvalidRequest('Invalid Action');

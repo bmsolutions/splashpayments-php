@@ -49,6 +49,12 @@ class entries extends BaseResource {
 
   /**
    * @string
+   * The identifier of the Fund that this Entry refers to.
+   */
+  public $fund;
+
+  /**
+   * @string
    * If the activity that this Entry refers to is the charging of a Fee, then this field stores the identifier of the corresponding Fee resource.
    */
   public $fee;
@@ -127,7 +133,7 @@ class entries extends BaseResource {
   /**
    * @integer
    */
-  public $sourced;
+  public $unsourced;
 
   /**
    * @string
@@ -135,6 +141,11 @@ class entries extends BaseResource {
    * Currently, this field only accepts the value 'USD'.
    */
   public $currency;
+
+  /**
+   * @integer
+   */
+  public $pending;
 
 
   public function update($params = array()) {

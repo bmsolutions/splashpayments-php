@@ -3,8 +3,8 @@ namespace SplashPayments;
 
 use SplashPayments\Exceptions\InvalidRequest;
 
-class adjustments extends BaseResource {
-  protected $resourceName = "adjustments";
+class fundOrigins extends BaseResource {
+  protected $resourceName = "fundOrigins";
   /**
    * @string
    * The ID of this resource.
@@ -37,48 +37,28 @@ class adjustments extends BaseResource {
 
   /**
    * @string
-   * The Login that owns this Adjustment.
    */
-  public $login;
+  public $fund;
 
   /**
    * @string
-   * The Entity that will receive the set amount.
    */
-  public $entity;
+  public $txn;
 
   /**
    * @string
-   * The Entity that will pay for the adjustment. 
-   * This is an optional field and should only be used when the amount is being transfered from the fromentity to the entity.
    */
-  public $fromentity;
+  public $disbursement;
 
   /**
    * @string
-   * A description of the Adjustment.
    */
-  public $description;
+  public $adjustment;
 
   /**
    * @integer
-   * The amount of the Adjustment.
    */
   public $amount;
-
-  /**
-   * @string
-   * The currency of the amount. 
-   * Currently, this field only accepts the value 'USD'.
-   */
-  public $currency;
-
-  /**
-   * @string
-   * The platform used for the adjustment. 
-   * This field is required if the adjustment is not between entities.
-   */
-  public $platform;
 
 
   public function update($params = array()) {
