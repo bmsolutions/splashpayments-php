@@ -136,13 +136,6 @@ class entries extends BaseResource {
   public $unsourced;
 
   /**
-   * @string
-   * The currency of the amount in this Entry. 
-   * Currently, this field only accepts the value 'USD'.
-   */
-  public $currency;
-
-  /**
    * @integer
    */
   public $pending;

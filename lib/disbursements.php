@@ -58,11 +58,6 @@ class disbursements extends BaseResource {
   /**
    * @string
    */
-  public $merchant;
-
-  /**
-   * @string
-   */
   public $description;
 
   /**

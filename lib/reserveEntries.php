@@ -49,12 +49,6 @@ class reserveEntries extends BaseResource {
 
   /**
    * @string
-   * The identifier of the Entity that this reserveEntries resource relates to.
-   */
-  public $entity;
-
-  /**
-   * @string
    * This field indicates that this reserveEntry was triggered from a Transaction. 
    * This field stores the identifier of the Transaction.
    */
@@ -87,11 +81,6 @@ class reserveEntries extends BaseResource {
    * This field is stored as a text string, and must be between 0 and 100 characters long.
    */
   public $description;
-
-  /**
-   * @string
-   */
-  public $currency;
 
   /**
    * @integer

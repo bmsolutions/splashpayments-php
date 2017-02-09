@@ -48,24 +48,11 @@ class entityReserves extends BaseResource {
   public $fund;
 
   /**
-   * @string
-   * The identifier of the Entity that this entityReserves resource relates to.
-   */
-  public $entity;
-
-  /**
    * @integer
    * The amount held in this entityReserve. 
    * This field is specified as an integer in cents.
    */
   public $total;
-
-  /**
-   * @string
-   * The currency of the amount in this entityReserve. 
-   * Currently, this field only accepts the value 'USD'.
-   */
-  public $currency;
 
 
   public function delete($params = array()) {

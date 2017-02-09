@@ -207,9 +207,9 @@ class BaseResource {
           unset($object->resourceName);
           unset($object->response);
 
-          $objectParams = array_filter((array) $object, function($value, $keyObject) {
+          $objectParams = array_filter((array) $object, function($value) {
             return isset($value);
-          }, ARRAY_FILTER_USE_BOTH);
+          });
             $newParam[$key] = $objectParams;
         }
       }
@@ -303,9 +303,9 @@ class BaseResource {
     unset($this->resourceName);
     unset($this->response);
     $thisParams = (array) $this;
-    $thisParams = array_filter($thisParams, function($value, $key) {
+    $thisParams = array_filter($thisParams, function($value) {
       return isset($value);
-    }, ARRAY_FILTER_USE_BOTH);
+    });
 
       $newArray = array_merge($thisParams, $params);
       if ($getNested) {
@@ -327,9 +327,9 @@ class BaseResource {
     unset($object->response);
     unset($object->requestOptions);
     unset($object->resourceName);
-    $objectParams = array_filter($object, function($value, $keyObject) {
+    $objectParams = array_filter($object, function($value) {
       return isset($value);
-    }, ARRAY_FILTER_USE_BOTH);
+    });
       $this->nestedParams[$field] = $objectParams;
   }
 
