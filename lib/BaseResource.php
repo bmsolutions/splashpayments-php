@@ -10,10 +10,8 @@ use \SplashPayments\Http\Request,
 class BaseResource {
   protected $response;
   protected $requestOptions;
-  protected $nestedParams;
 
   public function __construct($params = array()) {
-    $this->nestedParams = array();
     $this->requestOptions = new \SplashPayments\Http\RequestParams();
     if ($params) {
       foreach ($params as $key => $value) {
@@ -26,7 +24,7 @@ class BaseResource {
     $Request = Request::getInstance();
 
     // Get request values
-    $values = $this->_getRequestValues($params);
+    $values = $this->getRequestValues($params);
     $search = $this->_buildSearch($values);
     if ($this->requestOptions) {
       $search .= $this->requestOptions->getSort();
@@ -83,7 +81,7 @@ class BaseResource {
     $Request = Request::getInstance();
 
     // Get request values
-    $values = $this->_getRequestValues($params, true);
+    $values = $this->getRequestValues($params, true);
     $headers = array('Content-Type: application/json');
     $apiKey = Config::getApiKey();
     $sessionKey = Config::getSessionKey();
@@ -112,7 +110,7 @@ class BaseResource {
     $Request = Request::getInstance();
 
     // Get request values
-    $values = $this->_getRequestValues($params);
+    $values = $this->getRequestValues($params);
     if (!isset($values["id"])) {
       if (Config::exceptionsEnabled()) {
         throw new \SplashPayments\Exceptions\InvalidRequest("ID is required for this action");
@@ -155,7 +153,7 @@ class BaseResource {
     $Request = Request::getInstance();
 
     // Get request values
-    $values = $this->_getRequestValues($params);
+    $values = $this->getRequestValues($params);
     if (!isset($values["id"])) {
       if (Config::exceptionsEnabled()) {
         throw new \SplashPayments\Exceptions\InvalidRequest("ID is required for this action;");
@@ -190,39 +188,13 @@ class BaseResource {
     return $this->_validateResponse();
   }
 
-  // Set a nested obejct
-  public function set($field, $param) {
+  // Setter for nested objects
+  public function __set($field, $param) {
     if (!is_string($field)) {
       return false;
     }
 
-    if (is_array($param)) {
-      $newParam = array();
-      foreach ($param as $key => $object) {
-        // Check that the objects are valid
-        if ($this->_verifyObject($object)) {
-          // Retrive nested params from resource object
-          unset($object->nestedParams);
-          unset($object->requestOptions);
-          unset($object->resourceName);
-          unset($object->response);
-
-          $objectParams = array_filter((array) $object, function($value) {
-            return isset($value);
-          });
-            $newParam[$key] = $objectParams;
-        }
-      }
-      $this->_setNested($newParam, $field);
-      return true;
-    }
-    else {
-      if ($this->_verifyObject($param)) {
-        $this->_setNested($param, $field);
-        return true;
-      }
-      return false;
-    }
+    $this->{$field} = $param;
   }
 
   // Get the status code of the request
@@ -292,54 +264,65 @@ class BaseResource {
     return "SEARCH: {$search}";
   }
 
-  private function _getRequestValues($params = array(), $getNested = false) {
-    $nestedParams = $this->nestedParams;
+  protected function getRequestValues($params = array(), $getNested = false) {
+    if ($params) {
+      foreach ($params as $key => $value) {
+        $this->$key = $value;
+      }
+    }
     $requestOptions = $this->requestOptions;
     $resourceName = $this->resourceName;
     $response = $this->response;
 
-    unset($this->nestedParams);
-    unset($this->requestOptions);
-    unset($this->resourceName);
-    unset($this->response);
-    $thisParams = (array) $this;
-    $thisParams = array_filter($thisParams, function($value) {
-      return isset($value);
-    });
-
-      $newArray = array_merge($thisParams, $params);
-      if ($getNested) {
-        foreach ($nestedParams as $keyNested => $valueNested) {
-          $newArray[$keyNested] = $valueNested;
+    $this->requestOptions = null;
+    $this->resourceName = null;
+    $this->response = null;
+    $requestParams = array();
+    foreach ($this as $key => $value) {
+      if (isset($value)) {
+        if (is_scalar($value)) {
+          // Add to request array
+          $requestParams[$key] = $value;
+        }
+        else if ($getNested) {
+          // Process nested arrays/objects as well
+          // Check if the params have nested values
+          $nestedParams = array();
+          if (isset($params[$key])) {
+            $nestedParams = $params[$key];
+          }
+          if (is_array($value)) {
+            // Nested array of objects
+            $requestParams[$key] = array();
+            foreach ($value as $subKey => $subVal) {
+              if ($subVal instanceof BaseResource) {
+                // Append this object to the request array
+                $requestParams[$key][] = $subVal->getRequestValues($nestedParams, true);
+              }
+              else if (is_scalar($subVal)) {
+                // Append direct values to this nested array
+                $requestParams[$key][$subKey] = $subVal;
+              }
+              else {
+                // Unknown key detected, throw an exception
+                throw new \SplashPayments\Exceptions\InvalidRequest("Incorrect nesting structure for request");
+              }
+            }
+          }
+          else if ($value instanceof BaseResource) {
+            $requestParams[$key] = $value->getRequestValues($nestedParams, true);
+          }
+          else {
+            // Unknown key detected, throw an exception
+            throw new \SplashPayments\Exceptions\InvalidRequest("Incorrect nesting structure for request");
+          }
         }
       }
-
-      $this->nestedParams = $nestedParams;
-      $this->requestOptions = $requestOptions;
-      $this->resourceName = $resourceName;
-      $this->response = $response;
-      return $newArray;
-  }
-
-  private function _setNested($object, $field) {
-    // Retrive nested params from resource object
-    unset($object->nestedParams);
-    unset($object->response);
-    unset($object->requestOptions);
-    unset($object->resourceName);
-    $objectParams = array_filter($object, function($value) {
-      return isset($value);
-    });
-      $this->nestedParams[$field] = $objectParams;
-  }
-
-  // Verify that the nested objects are valid resource objects
-  private function _verifyObject($value) {
-    $parent = get_class();
-    if ($parent !== get_parent_class($value)) {
-      return false;
     }
-    return true;
+    $this->requestOptions = $requestOptions;
+    $this->resourceName = $resourceName;
+    $this->response = $response;
+    return $requestParams;
   }
 
   private function _validateResponse() {
