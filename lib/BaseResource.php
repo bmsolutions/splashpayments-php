@@ -9,6 +9,7 @@ use \SplashPayments\Http\Request,
 
 class BaseResource {
   protected $response;
+  protected $resourceName;
   protected $requestOptions;
 
   public function __construct($params = array()) {
@@ -302,6 +303,11 @@ class BaseResource {
               else if (is_scalar($subVal)) {
                 // Append direct values to this nested array
                 $requestParams[$key][$subKey] = $subVal;
+              }
+              else if (is_array($subVal)) {
+                // Append this array to the request array
+                $emptyResource = new BaseResource($subVal);
+                $requestParams[$key][$subKey] = $emptyResource->getRequestValues($nestedParams, true);
               }
               else {
                 // Unknown key detected, throw an exception

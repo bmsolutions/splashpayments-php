@@ -255,6 +255,11 @@ class txns extends BaseResource {
 
   /**
    * @string
+   */
+  public $clientIp;
+
+  /**
+   * @string
    * The first name associated with this Transaction.
    */
   public $first;
