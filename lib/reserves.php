@@ -57,14 +57,14 @@ class reserves extends BaseResource {
   /**
    * @string
    * The name of this Reserve. 
-   * This field is stored as a text string, and must be between 1 and 100 characters long.
+   * This field is stored as a text string and must be between 1 and 100 characters long.
    */
   public $name;
 
   /**
    * @string
    * A description of this Reserve.  
-   * This field is stored as a text string, and must be between 0 and 100 characters long.
+   * This field is stored as a text string and must be between 0 and 100 characters long.
    */
   public $description;
 
@@ -89,7 +89,7 @@ class reserves extends BaseResource {
   /**
    * @integer
    * A multiplier that you can use to adjust the schedule set in the 'release' field. 
-   * This field is specified as an integer, and its value determines how the schedule is multiplied. 
+   * This field is specified as an integer and its value determines how the schedule is multiplied. 
    * For example, if 'release' is set to '1' (meaning 'daily'), then a 'releaseFactor' value of '2' would cause the funds to be released from this Reserve every two days.
    */
   public $releaseFactor;
@@ -103,13 +103,13 @@ class reserves extends BaseResource {
 
   /**
    * @integer
-   * Whether this resource is marked as inactive. A value of '1' means inactive, and a value of '0' means active.
+   * Whether this resource is marked as inactive. A value of '1' means inactive and a value of '0' means active.
    */
   public $inactive;
 
   /**
    * @integer
-   * Whether this resource is marked as frozen. A value of '1' means frozen, and a value of '0' means not frozen.
+   * Whether this resource is marked as frozen. A value of '1' means frozen and a value of '0' means not frozen.
    */
   public $frozen;
 

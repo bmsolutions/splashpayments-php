@@ -3,8 +3,8 @@ namespace SplashPayments;
 
 use SplashPayments\Exceptions\InvalidRequest;
 
-class chargebacks extends BaseResource {
-  protected $resourceName = "chargebacks";
+class txnHolds extends BaseResource {
+  protected $resourceName = "txnHolds";
   /**
    * @string
    * The ID of this resource.
@@ -37,88 +37,45 @@ class chargebacks extends BaseResource {
 
   /**
    * @string
+   * The identifier of the Login that owns this txnHolds resource.
    */
-  public $merchant;
+  public $login;
 
   /**
    * @string
+   * The identifier of the Txn that is being held with this txnHold.
    */
   public $txn;
 
   /**
    * @string
+   * If this txnHold resource was triggered through a txnVerification, then this field stores the identifier of the TxnVerification.
    */
-  public $mid;
-
-  /**
-   * @string
-   */
-  public $description;
+  public $txnVerification;
 
   /**
    * @integer
+   * The action taken on the referenced Txn. 
+   * This field is specified as an integer. 
+   * Valid values are: 
+   * '1': Block. Block the Transaction from proceeding. This returns an error. 
+   * '2': Reserved for future use. 
+   * '3': Hold. Hold the Transaction. It will not be captured until it is manually released. 
+   * '4': Reserve. Reserve the Transaction. The funds for the transaction will not be released until the Transaction is manually reviewed.
    */
-  public $total;
-
-  /**
-   * @integer
-   */
-  public $representedTotal;
-
-  /**
-   * @integer
-   */
-  public $cycle;
+  public $action;
 
   /**
    * @string
+   * If this txnHold was released, this will contain the timestamp for when it was released.
    */
-  public $currency;
+  public $released;
 
   /**
    * @string
+   * If this txnHold was reviewed, this will contain the timestamp for when it was reviewed.
    */
-  public $ref;
-
-  /**
-   * @string
-   */
-  public $reason;
-
-  /**
-   * @string
-   */
-  public $reasonCode;
-
-  /**
-   * @integer
-   */
-  public $issued;
-
-  /**
-   * @integer
-   */
-  public $received;
-
-  /**
-   * @integer
-   */
-  public $reply;
-
-  /**
-   * @string
-   */
-  public $bankRef;
-
-  /**
-   * @string
-   */
-  public $chargebackRef;
-
-  /**
-   * @integer
-   */
-  public $status;
+  public $reviewed;
 
   /**
    * @integer
@@ -133,11 +90,11 @@ class chargebacks extends BaseResource {
   public $frozen;
 
 
-  public function delete($params = array()) {
+  public function update($params = array()) {
       throw new \SplashPayments\Exceptions\InvalidRequest('Invalid Action');
   }
 
-  public function create($params = array()) {
+  public function delete($params = array()) {
       throw new \SplashPayments\Exceptions\InvalidRequest('Invalid Action');
   }
 

@@ -37,18 +37,6 @@ class merchants extends BaseResource {
 
   /**
    * @string
-   * The incoming ip address from which this Merchant was created.
-   */
-  public $ipCreated;
-
-  /**
-   * @string
-   * The incoming ip address from which this Merchant was last modified.
-   */
-  public $ipModified;
-
-  /**
-   * @string
    * The date and time on which this Merchant last processed a Transaction.
    */
   public $lastActivity;
@@ -68,7 +56,7 @@ class merchants extends BaseResource {
   /**
    * @integer
    * An indicator that specifies whether the Merchant is new to credit card processing. 
-   * A value of '1' means new, and a value of '0' means not new. By default, merchants are considered to be new.
+   * A value of '1' means new and a value of '0' means not new. By default, merchants are considered to be new.
    */
   public $new;
 
@@ -85,6 +73,11 @@ class merchants extends BaseResource {
    * This field is specified as an integer in cents.
    */
   public $annualCCSales;
+
+  /**
+   * @integer
+   */
+  public $avgTicket;
 
   /**
    * @string
@@ -106,7 +99,7 @@ class merchants extends BaseResource {
 
   /**
    * @integer
-   * The status of the Merchant. Valid values are '0' (not ready), '1' (ready), '2' (boarded), '3' (manual), and '4' (denied).
+   * The status of the Merchant. Valid values are '0' (not ready), '1' (ready), '2' (boarded), '3' (manual) and '4' (denied).
    */
   public $status;
 
@@ -118,7 +111,7 @@ class merchants extends BaseResource {
 
   /**
    * @integer
-   * The Tax ID (TIN) status of the merchant. Valid values are '0' (pending), '1' (valid), and '2' (invalid).
+   * The Tax ID (TIN) status of the merchant. Valid values are '0' (pending), '1' (valid) and '2' (invalid).
    */
   public $tinStatus;
 
@@ -136,13 +129,13 @@ class merchants extends BaseResource {
 
   /**
    * @integer
-   * Whether this resource is marked as inactive. A value of '1' means inactive, and a value of '0' means active.
+   * Whether this resource is marked as inactive. A value of '1' means inactive and a value of '0' means active.
    */
   public $inactive;
 
   /**
    * @integer
-   * Whether this resource is marked as frozen. A value of '1' means frozen, and a value of '0' means not frozen.
+   * Whether this resource is marked as frozen. A value of '1' means frozen and a value of '0' means not frozen.
    */
   public $frozen;
 

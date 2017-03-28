@@ -100,7 +100,7 @@ class txns extends BaseResource {
   /**
    * @string
    * The expiration date of this Transaction. 
-   * This field is stored as a text string in 'MMYY' format, where 'MM' is the number of a month, and 'YY' is the last two digits of a year. For example, '0623' for June 2023. 
+   * This field is stored as a text string in 'MMYY' format, where 'MM' is the number of a month and 'YY' is the last two digits of a year. For example, '0623' for June 2023. 
    * The value must reflect a future date.
    */
   public $expiration;
@@ -123,7 +123,7 @@ class txns extends BaseResource {
   /**
    * @string
    * The authorization code for this Transaction. 
-   * This field is stored as a text string, and must be between 0 and 20 characters long.
+   * This field is stored as a text string and must be between 0 and 20 characters long.
    */
   public $authCode;
 
@@ -159,29 +159,29 @@ class txns extends BaseResource {
    * @integer
    * Whether to allow partial amount authorizations of this Transaction. 
    * For example, if the transaction amount is $1000 and the processor only authorizes a smaller amount, then enabling this field  lets the Transaction proceed anyway. 
-   * A value of '1' means that partial amount authorizations are allowed, and a value of '0' means that partial amount authorizations are not allowed.
+   * A value of '1' means that partial amount authorizations are allowed and a value of '0' means that partial amount authorizations are not allowed.
    */
   public $allowPartial;
 
   /**
    * @string
    * The identifier of the Order associated with this Transaction. 
-   * This field is stored as a text string, and must be between 0 and 20 characters long.
+   * This field is stored as a text string and must be between 0 and 20 characters long.
    */
   public $order;
 
   /**
    * @string
    * A description of this Transaction.  
-   * This field is stored as a text string, and must be between 0 and 100 characters long.
+   * This field is stored as a text string and must be between 0 and 100 characters long.
    */
   public $description;
 
   /**
    * @string
    * The identifier of the terminal that processed this Transaction. 
-   * The identifier is taken from the terminal system, and varies in format according to the type of terminal. 
-   * This field is stored as a text string, and must be between 0 and 8 characters long.
+   * The identifier is taken from the terminal system and varies in format according to the type of terminal. 
+   * This field is stored as a text string and must be between 0 and 8 characters long.
    */
   public $terminal;
 
@@ -214,6 +214,13 @@ class txns extends BaseResource {
   public $total;
 
   /**
+   * @integer
+   * The amount of the total sum of this Transaction that is given as cash back. 
+   * This field is specified as an integer in cents.
+   */
+  public $cashback;
+
+  /**
    * @string
    * The authorization code for this Transaction, as returned by the network.
    */
@@ -228,7 +235,7 @@ class txns extends BaseResource {
 
   /**
    * @integer
-   * Whether correct cvv was sent during this Transaction. A value of '1' means cvv was sent and was correct, and a value of '0' means that cvv was not sent or was not correct.
+   * Whether correct cvv was sent during this Transaction. A value of '1' means cvv was sent and was correct and a value of '0' means that cvv was not sent or was not correct.
    */
   public $cvv;
 
@@ -236,25 +243,38 @@ class txns extends BaseResource {
    * @integer
    * Whether the card was swiped during this Transaction. 
    * This field is set to '1' automatically if 'track' data was received. 
-   * A value of '1' means swiped, and a value of '0' means not swiped.
+   * A value of '1' means swiped and a value of '0' means not swiped.
    */
   public $swiped;
 
   /**
    * @integer
+   * Whether the card was dipped (using the EMV chip) during this Transaction. 
+   * This field is set to '1' automatically if 'EMV' data was received. 
+   * A value of '1' means dipped and a value of '0' means not dipped.
+   */
+  public $emv;
+
+  /**
+   * @integer
    * Whether a signature was captured during this Transaction. 
-   * A value of '1' means a signature was captured, and a value of '0' means a signature was not captured. 
+   * A value of '1' means a signature was captured and a value of '0' means a signature was not captured. 
    * You can set this field if you took a signature for the Transaction. The API also sets this field automatically if you associate a signature to the Transaction by creating a 'txnDatas' resource.
    */
   public $signature;
 
   /**
    * @integer
+   * Whether the card was swiped at an unattended terminal during this Transaction. 
+   * This field is set to '0' by default. 
+   * A value of '1' means the terminal was unattended and a value of '0' means the terminal was attended.
    */
   public $unattended;
 
   /**
    * @string
+   * The client ip address from which the Transaction was created. 
+   * Valid values are any Ipv4 or Ipv6 address.
    */
   public $clientIp;
 
@@ -291,72 +311,92 @@ class txns extends BaseResource {
   /**
    * @string
    * The first line of the address associated with this Transaction. 
-   * This field is stored as a text string, and must be between 1 and 100 characters long.
+   * This field is stored as a text string and must be between 1 and 100 characters long.
    */
   public $address1;
 
   /**
    * @string
    * The second line of the address associated with this Transaction. 
-   * This field is stored as a text string, and must be between 1 and 20 characters long.
+   * This field is stored as a text string and must be between 1 and 20 characters long.
    */
   public $address2;
 
   /**
    * @string
    * The name of the city in the address associated with this Transaction. 
-   * This field is stored as a text string, and must be between 1 and 20 characters long.
+   * This field is stored as a text string and must be between 1 and 20 characters long.
    */
   public $city;
 
   /**
    * @string
-   * The U.S. state in the address associated with this Transaction. 
-   * Valid values are: AL, AK, AZ, AR, CA, CO, CT, DE, DC, FL, GA, HI, ID, IL, IN, IA, KS, KY, LA, ME, MD, MA, MI, MN, MS, MO, MT, NE, NV, NH, NJ, NM, NY, NC, ND, OH, OK, OR, PA, RI, SC, SD, TN, TX, UT, VT, VA, WA, WV, WI, and WY.
+   * The state associated with this Transaction. 
+   * If in the U.S. this is specified as the 2 character postal abbreviation for the state, if outside of the U.S. the full state name. 
+   * This field is stored as a text string and must be between 2 and 100 characters long.
    */
   public $state;
 
   /**
    * @string
    * The ZIP code in the address associated with this Transaction. 
-   * This field is stored as a text string, and must be between 1 and 20 characters long.
+   * This field is stored as a text string and must be between 1 and 20 characters long.
    */
   public $zip;
 
   /**
    * @string
-   * The country in the address associated with the Transaction. Currently, this field only accepts the value 'USA'.
+   * The country associated with this Transaction. 
+   * Valid values for this field is the 3-letter ISO code for the country.
    */
   public $country;
 
   /**
    * @string
    * The phone number associated with this Transaction. 
-   * This field is stored as a text string, and must be between 10 and 15 characters long.
+   * This field is stored as a text string and must be between 10 and 15 characters long.
    */
   public $phone;
 
   /**
    * @integer
-   * Indicates whether the Transaction is reserved, and the action that will be taken as a result. 
+   * The status of the Transaction. Valid values are '0' (pending), '1' (approved), '2' (failed), '3' (captured), '4' (settled) and '5' (returned).
+   */
+  public $status;
+
+  /**
+   * @integer
+   * The amount of this Transaction that has been refunded.
+   */
+  public $refunded;
+
+  /**
+   * @integer
+   * Indicates whether the Transaction is reserved and the action that will be taken as a result. 
    * This field is specified as an integer. 
    * Valid values are: 
    * '0': Not reserved 
    * '1': If the Transaction is a sale or authorization, then block the capture of the Transaction. 
-   * '2': Apply a manual override to any checks on the Transaction and allow it to proceed, and 
+   * '2': Apply a manual override to any checks on the Transaction and allow it to proceed and 
    * '3': Move all funds from this Transaction into a reserve.
    */
   public $reserved;
 
   /**
+   * @string
+   * The last transaction stage check for risk.
+   */
+  public $checkStage;
+
+  /**
    * @integer
-   * Whether this resource is marked as inactive. A value of '1' means inactive, and a value of '0' means active.
+   * Whether this resource is marked as inactive. A value of '1' means inactive and a value of '0' means active.
    */
   public $inactive;
 
   /**
    * @integer
-   * Whether this resource is marked as frozen. A value of '1' means frozen, and a value of '0' means not frozen.
+   * Whether this resource is marked as frozen. A value of '1' means frozen and a value of '0' means not frozen.
    */
   public $frozen;
 

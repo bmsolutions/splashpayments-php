@@ -59,20 +59,20 @@ class apikeys extends BaseResource {
   /**
    * @integer
    * Whether this API key should have access to only public resources. 
-   * A value of '1' means that the key can only access public resources, and a value of '0' means that the key can also access private resources. 
-   * Public resources include Transactions, Tokens, Customers, and Items. All other resources are private.
+   * A value of '1' means that the key can only access public resources and a value of '0' means that the key can also access private resources. 
+   * Public resources include Transactions, Tokens, Customers and Items. All other resources are private.
    */
   public $public;
 
   /**
    * @integer
-   * Whether this resource is marked as inactive. A value of '1' means inactive, and a value of '0' means active.
+   * Whether this resource is marked as inactive. A value of '1' means inactive and a value of '0' means active.
    */
   public $inactive;
 
   /**
    * @integer
-   * Whether this resource is marked as frozen. A value of '1' means frozen, and a value of '0' means not frozen.
+   * Whether this resource is marked as frozen. A value of '1' means frozen and a value of '0' means not frozen.
    */
   public $frozen;
 

@@ -44,7 +44,7 @@ class feeRules extends BaseResource {
   /**
    * @string
    * The name of this Fee Rule. 
-   * This field is stored as a text string, and must be between 0 and 100 characters long.
+   * This field is stored as a text string and must be between 0 and 100 characters long.
    */
   public $name;
 
@@ -61,7 +61,7 @@ class feeRules extends BaseResource {
    * '1': Less than - the Fee applies only if the triggered amount is lower than the amount set in the 'value' field of the Fee Rule, 
    * '2': Equal to - the Fee applies only if the transaction amount is exactly the same as the amount set in the 'value' field of the Fee Rule, 
    * '3': Not equal to - the Fee applies only if the transaction amount is not exactly equal to the amount set in the 'value' field of the Fee Rule, 
-   * '4': Greater than - the Fee applies only if the transaction amount is higher than the amount set in the 'value' field of the Fee Rule, and 
+   * '4': Greater than - the Fee applies only if the transaction amount is higher than the amount set in the 'value' field of the Fee Rule and 
    * '5': Swiped - the Fee applies based on a determination of whether the cardholder was present during the transaction.
    */
   public $type;
@@ -76,13 +76,13 @@ class feeRules extends BaseResource {
 
   /**
    * @integer
-   * Whether this resource is marked as inactive. A value of '1' means inactive, and a value of '0' means active.
+   * Whether this resource is marked as inactive. A value of '1' means inactive and a value of '0' means active.
    */
   public $inactive;
 
   /**
    * @integer
-   * Whether this resource is marked as frozen. A value of '1' means frozen, and a value of '0' means not frozen.
+   * Whether this resource is marked as frozen. A value of '1' means frozen and a value of '0' means not frozen.
    */
   public $frozen;
 

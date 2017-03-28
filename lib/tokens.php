@@ -56,20 +56,20 @@ class tokens extends BaseResource {
   /**
    * @string
    * The expiry month for the payment method associated with this Token.
-   *  This field is stored as a text string in 'MMYY' format, where 'MM' is the number of a month, and 'YY' is the last two digits of a year. For example, '0623' for June 2023. 
+   *  This field is stored as a text string in 'MMYY' format, where 'MM' is the number of a month and 'YY' is the last two digits of a year. For example, '0623' for June 2023. 
    * The value must reflect a future date.
    */
   public $expiration;
 
   /**
    * @integer
-   * Whether this resource is marked as inactive. A value of '1' means inactive, and a value of '0' means active.
+   * Whether this resource is marked as inactive. A value of '1' means inactive and a value of '0' means active.
    */
   public $inactive;
 
   /**
    * @integer
-   * Whether this resource is marked as frozen. A value of '1' means frozen, and a value of '0' means not frozen.
+   * Whether this resource is marked as frozen. A value of '1' means frozen and a value of '0' means not frozen.
    */
   public $frozen;
 

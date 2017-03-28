@@ -113,6 +113,19 @@ class merchantChecks extends BaseResource {
 
   /**
    * @integer
+   * The options for the Verification. 
+   * This field is specified as a sum of the desired options. 
+   * Valid values are: 
+   * '0': NONE. No options are set. 
+   * '1': KYC. KYC verification will be enabled. 
+   * '2': WATCHLIST_STANDARD. Primary member will be checked agains standard watchlists. 
+   * '4': WATCHLIST_PLUS. Primary member will be checked against additional watchlists. 
+   * '8': WATCHLIST_PREMIER. Primary member will be checked against uncommon lists like PEP, Associated family members, etc.
+   */
+  public $options;
+
+  /**
+   * @integer
    * A sequence number to use when applying multiple linked checks. 
    * When two or more checks are linked, the checks with lower 'sequence' numbers are applied first. 
    * This field is specified as an integer.
@@ -121,13 +134,13 @@ class merchantChecks extends BaseResource {
 
   /**
    * @integer
-   * Whether this resource is marked as inactive. A value of '1' means inactive, and a value of '0' means active.
+   * Whether this resource is marked as inactive. A value of '1' means inactive and a value of '0' means active.
    */
   public $inactive;
 
   /**
    * @integer
-   * Whether this resource is marked as frozen. A value of '1' means frozen, and a value of '0' means not frozen.
+   * Whether this resource is marked as frozen. A value of '1' means frozen and a value of '0' means not frozen.
    */
   public $frozen;
 

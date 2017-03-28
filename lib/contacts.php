@@ -74,67 +74,69 @@ class contacts extends BaseResource {
   /**
    * @string
    * The fax number associated with this Contact. 
-   * This field is stored as a text string, and must be between 10 and 15 characters long.
+   * This field is stored as a text string and must be between 10 and 15 characters long.
    */
   public $fax;
 
   /**
    * @string
    * The phone number associated with this Contact. 
-   * This field is stored as a text string, and must be between 10 and 15 characters long.
+   * This field is stored as a text string and must be between 10 and 15 characters long.
    */
   public $phone;
 
   /**
    * @string
-   * The country in the address associated with the Contact. Currently, this field only accepts the value 'USA'.
+   * The country associated with this Contact. 
+   * Valid values for this field is the 3-letter ISO code for the country.
    */
   public $country;
 
   /**
    * @string
    * The ZIP code in the address associated with this Contact. 
-   * This field is stored as a text string, and must be between 1 and 20 characters long.
+   * This field is stored as a text string and must be between 1 and 20 characters long.
    */
   public $zip;
 
   /**
    * @string
-   * The U.S. state in the address associated with this Contact. 
-   * Valid values are: AL, AK, AZ, AR, CA, CO, CT, DE, DC, FL, GA, HI, ID, IL, IN, IA, KS, KY, LA, ME, MD, MA, MI, MN, MS, MO, MT, NE, NV, NH, NJ, NM, NY, NC, ND, OH, OK, OR, PA, RI, SC, SD, TN, TX, UT, VT, VA, WA, WV, WI, and WY.
+   * The state associated with this Contact. 
+   * If in the U.S. this is specified as the 2 character postal abbreviation for the state, if outside of the U.S. the full state name. 
+   * This field is stored as a text string and must be between 2 and 100 characters long.
    */
   public $state;
 
   /**
    * @string
    * The name of the city in the address associated with this Contact. 
-   * This field is stored as a text string, and must be between 1 and 20 characters long.
+   * This field is stored as a text string and must be between 1 and 20 characters long.
    */
   public $city;
 
   /**
    * @string
    * The second line of the address associated with this Contact. 
-   * This field is stored as a text string, and must be between 1 and 20 characters long.
+   * This field is stored as a text string and must be between 1 and 20 characters long.
    */
   public $address2;
 
   /**
    * @string
    * The first line of the address associated with this Contact. 
-   * This field is stored as a text string, and must be between 1 and 100 characters long.
+   * This field is stored as a text string and must be between 1 and 100 characters long.
    */
   public $address1;
 
   /**
    * @integer
-   * Whether this resource is marked as inactive. A value of '1' means inactive, and a value of '0' means active.
+   * Whether this resource is marked as inactive. A value of '1' means inactive and a value of '0' means active.
    */
   public $inactive;
 
   /**
    * @integer
-   * Whether this resource is marked as frozen. A value of '1' means frozen, and a value of '0' means not frozen.
+   * Whether this resource is marked as frozen. A value of '1' means frozen and a value of '0' means not frozen.
    */
   public $frozen;
 

@@ -44,14 +44,14 @@ class orgs extends BaseResource {
   /**
    * @string
    * The name of this Org. 
-   * This field is stored as a text string, and must be between 0 and 100 characters long.
+   * This field is stored as a text string and must be between 0 and 100 characters long.
    */
   public $name;
 
   /**
    * @string
    * A description of this Org.  
-   * This field is stored as a text string, and must be between 0 and 100 characters long.
+   * This field is stored as a text string and must be between 0 and 100 characters long.
    */
   public $description;
 

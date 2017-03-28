@@ -56,6 +56,11 @@ class reserveEntries extends BaseResource {
 
   /**
    * @string
+   */
+  public $txnHold;
+
+  /**
+   * @string
    * This field indicates that this reserveEntry was triggered from an automatic reserve. 
    * This field stores the identifier of the Reserve resource.
    */
@@ -78,7 +83,7 @@ class reserveEntries extends BaseResource {
   /**
    * @string
    * A description of this reserveEntries resource.  
-   * This field is stored as a text string, and must be between 0 and 100 characters long.
+   * This field is stored as a text string and must be between 0 and 100 characters long.
    */
   public $description;
 

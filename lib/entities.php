@@ -37,6 +37,25 @@ class entities extends BaseResource {
 
   /**
    * @string
+   * The incoming ip address from which this Entity was created.
+   */
+  public $ipCreated;
+
+  /**
+   * @string
+   * The incoming ip address from which this Entity was last modified.
+   */
+  public $ipModified;
+
+  /**
+   * @string
+   * The client ip address from which the Entity was created. 
+   * Valid values are any Ipv4 or Ipv6 address.
+   */
+  public $clientIp;
+
+  /**
+   * @string
    * The Login that owns this resource.
    */
   public $login;
@@ -51,48 +70,49 @@ class entities extends BaseResource {
    * @integer
    * The type of Entity. 
    * This field is specified as an integer. 
-   * Valid values are '0' (sole proprietor), '1' (corporation), '2' (limited liability company), '3' (partnership), '4' (association), '5' (non-profit organization), and '6' (government organization).
+   * Valid values are '0' (sole proprietor), '1' (corporation), '2' (limited liability company), '3' (partnership), '4' (association), '5' (non-profit organization) and '6' (government organization).
    */
   public $type;
 
   /**
    * @string
    * The name of this Entity. 
-   * This field is stored as a text string, and must be between 1 and 100 characters long.
+   * This field is stored as a text string and must be between 1 and 100 characters long.
    */
   public $name;
 
   /**
    * @string
    * The first line of the address associated with this Entity. 
-   * This field is stored as a text string, and must be between 1 and 100 characters long.
+   * This field is stored as a text string and must be between 1 and 100 characters long.
    */
   public $address1;
 
   /**
    * @string
    * The second line of the address associated with this Entity. 
-   * This field is stored as a text string, and must be between 1 and 20 characters long.
+   * This field is stored as a text string and must be between 1 and 20 characters long.
    */
   public $address2;
 
   /**
    * @string
    * The name of the city in the address associated with this Entity. 
-   * This field is stored as a text string, and must be between 1 and 20 characters long.
+   * This field is stored as a text string and must be between 1 and 20 characters long.
    */
   public $city;
 
   /**
    * @string
-   * The U.S. state in the address associated with this Entity. Valid values are: AL, AK, AZ, AR, CA, CO, CT, DE, DC, FL, GA, HI, ID, IL, IN, IA, KS, KY, LA, ME, MD, MA, MI, MN, MS, MO, MT, NE, NV, NH, NJ, NM, NY, NC, ND, OH, OK, OR, PA, RI, SC, SD, TN, TX, UT, VT, VA, WA, WV, WI, and WY.
+   * The U.S. state associated with this Entity. 
+   * Valid values are any U.S. state's 2 character postal abbreviation.
    */
   public $state;
 
   /**
    * @string
    * The ZIP code in the address associated with this Entity. 
-   * This field is stored as a text string, and must be between 1 and 20 characters long.
+   * This field is stored as a text string and must be between 1 and 20 characters long.
    */
   public $zip;
 
@@ -105,28 +125,28 @@ class entities extends BaseResource {
   /**
    * @string
    * The phone number associated with this Entity. 
-   * This field is stored as a text string, and must be between 10 and 15 characters long.
+   * This field is stored as a text string and must be between 10 and 15 characters long.
    */
   public $phone;
 
   /**
    * @string
    * The fax number associated with this Entity. 
-   * This field is stored as a text string, and must be between 10 and 15 characters long.
+   * This field is stored as a text string and must be between 10 and 15 characters long.
    */
   public $fax;
 
   /**
    * @string
    * The email address associated with this Entity. 
-   * This field is stored as a text string, and must be between 1 and 100 characters long.
+   * This field is stored as a text string and must be between 1 and 100 characters long.
    */
   public $email;
 
   /**
    * @string
    * The web site URL associated with this Entity. 
-   * This field is stored as a text string, and must be between 0 and 50 characters long.
+   * This field is stored as a text string and must be between 0 and 50 characters long.
    */
   public $website;
 
@@ -145,18 +165,19 @@ class entities extends BaseResource {
 
   /**
    * @string
+   * Custom, free-form field for client-supplied text.
    */
   public $custom;
 
   /**
    * @integer
-   * Whether this resource is marked as inactive. A value of '1' means inactive, and a value of '0' means active.
+   * Whether this resource is marked as inactive. A value of '1' means inactive and a value of '0' means active.
    */
   public $inactive;
 
   /**
    * @integer
-   * Whether this resource is marked as frozen. A value of '1' means frozen, and a value of '0' means not frozen.
+   * Whether this resource is marked as frozen. A value of '1' means frozen and a value of '0' means not frozen.
    */
   public $frozen;
 

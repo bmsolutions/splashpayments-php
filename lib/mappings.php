@@ -55,21 +55,21 @@ class mappings extends BaseResource {
   /**
    * @string
    * A JSON document that describes the input fields that should be mapped. 
-   * This field is stored as a text string, and must be between 1 and 5000 characters long.
+   * This field is stored as a text string and must be between 1 and 5000 characters long.
    */
   public $input;
 
   /**
    * @string
    * A JSON document that describes the fields that should appear in the output, after the input fields have been mapped. 
-   * This field is stored as a text string, and must be between 1 and 5000 characters long.
+   * This field is stored as a text string and must be between 1 and 5000 characters long.
    */
   public $output;
 
   /**
    * @string
    * A valid URL that represents the XML namespace of the input and output documents. 
-   * This field is stored as a text string, and must be between 1 and 100 characters long.
+   * This field is stored as a text string and must be between 1 and 100 characters long.
    */
   public $namespace;
 

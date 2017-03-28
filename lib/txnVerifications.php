@@ -48,6 +48,11 @@ class txnVerifications extends BaseResource {
   public $txn;
 
   /**
+   * @string
+   */
+  public $txnCheck;
+
+  /**
    * @integer
    * The type of check to perform. 
    * This field is specified as an integer. 

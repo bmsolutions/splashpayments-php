@@ -3,8 +3,8 @@ namespace SplashPayments;
 
 use SplashPayments\Exceptions\InvalidRequest;
 
-class refunds extends BaseResource {
-  protected $resourceName = "refunds";
+class txnHoldNotes extends BaseResource {
+  protected $resourceName = "txnHoldNotes";
   /**
    * @string
    * The ID of this resource.
@@ -37,24 +37,27 @@ class refunds extends BaseResource {
 
   /**
    * @string
-   * The identifier of the Entries resource that is being refunded.
+   * The identifier of the TxnHold that owns this txnHoldNotes resource.
    */
-  public $entry;
+  public $txnHold;
 
   /**
    * @string
-   * A description of this Refund.  
-   * This field is stored as a text string and must be between 0 and 100 characters long.
+   * Free-form text for adding a message along with the action.
    */
-  public $description;
+  public $note;
 
   /**
    * @integer
-   * The amount of this Refund. 
-   * This field is specified as an integer in cents. 
-   * This field is optional. If it is not set, then the API uses the amount that is specified in the related Entry resource.
+   * The desired action to take on the referenced TxnHold. 
+   * This field is specified as an integer. 
+   * Valid values are: 
+   * '0': Note. Just add a note to the txnHold. '1': Release. Release the hold for this TxnHold.
+   * '2': Hold. If the txnHold was released, this will allow resetting the hold.
+   * '3': Review. Mark the txnHold as having been reviewed. 
+   * '4': Re-Review. If the txnHold was marked as reviewed, this will allow resetting the review.
    */
-  public $amount;
+  public $action;
 
 
   public function update($params = array()) {

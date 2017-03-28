@@ -52,7 +52,7 @@ class orgFlows extends BaseResource {
    * Whether this resource should affect logins recursively - in other words, affect this Login and all its child Logins. 
    * Valid values are: 
    * '0': Not recursive. The orgFlow only affects the Login identified in the 'forLogin' field. 
-   * '1': Recursive. The orgFlow affects the Login identified in the 'forLogin' field, and all its child Logins.
+   * '1': Recursive. The orgFlow affects the Login identified in the 'forLogin' field and all its child Logins.
    */
   public $recursive;
 

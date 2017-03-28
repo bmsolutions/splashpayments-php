@@ -43,7 +43,7 @@ class accounts extends BaseResource {
 
   /**
    * @string
-   * An object representing details of the Account, including the type of Account (method), Account number, and routing code.
+   * An object representing details of the Account, including the type of Account (method), Account number and routing code.
    */
   public $account;
 
@@ -55,11 +55,13 @@ class accounts extends BaseResource {
 
   /**
    * @string
+   * A client-supplied name for this bank account.
    */
   public $name;
 
   /**
    * @string
+   * A client-supplied description for this bank account.
    */
   public $description;
 
@@ -67,7 +69,7 @@ class accounts extends BaseResource {
    * @integer
    * Indicates whether the Account is the 'primary' Account for the associated Entity. 
    * Only one Account associated with each Entity can be the 'primary' Account. 
-   * A value of '1' means the Account is the primary, and a value of '0' means the Account is not the primary.
+   * A value of '1' means the Account is the primary and a value of '0' means the Account is not the primary.
    */
   public $primary;
 
@@ -79,7 +81,7 @@ class accounts extends BaseResource {
    * '1': Ready. The account is ready to be verified. 
    * '2': Challenged - the account has processed the challenge. 
    * '3': Verified. The Account has been verified. 
-   * '4': Manual. There has been an issue during verification, and further attempts to verify the Account will require manual intervention.
+   * '4': Manual. There has been an issue during verification and further attempts to verify the Account will require manual intervention.
    */
   public $status;
 
@@ -92,13 +94,13 @@ class accounts extends BaseResource {
 
   /**
    * @integer
-   * Whether this resource is marked as inactive. A value of '1' means inactive, and a value of '0' means active.
+   * Whether this resource is marked as inactive. A value of '1' means inactive and a value of '0' means active.
    */
   public $inactive;
 
   /**
    * @integer
-   * Whether this resource is marked as frozen. A value of '1' means frozen, and a value of '0' means not frozen.
+   * Whether this resource is marked as frozen. A value of '1' means frozen and a value of '0' means not frozen.
    */
   public $frozen;
 

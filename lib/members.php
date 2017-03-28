@@ -86,6 +86,8 @@ class members extends BaseResource {
 
   /**
    * @string
+   * The U.S. state where the driver's license of this Member was issued. 
+   * Valid values are any U.S. state's 2 character postal abbreviation.
    */
   public $dlstate;
 
@@ -104,60 +106,75 @@ class members extends BaseResource {
 
   /**
    * @string
+   * The fax number associated with this Member. 
+   * This field is stored as a text string and must be between 10 and 15 characters long.
    */
   public $fax;
 
   /**
    * @string
+   * The phone number associated with this Member. 
+   * This field is stored as a text string and must be between 10 and 15 characters long.
    */
   public $phone;
 
   /**
    * @string
+   * The country in the address associated with the Member. Currently, this field only accepts the value 'USA'.
    */
   public $country;
 
   /**
    * @string
+   * The ZIP code in the address associated with this Member. 
+   * This field is stored as a text string and must be between 1 and 20 characters long.
    */
   public $zip;
 
   /**
    * @string
+   * The U.S. state associated with this Member. 
+   * Valid values are any U.S. state's 2 character postal abbreviation.
    */
   public $state;
 
   /**
    * @string
+   * The name of the city in the address associated with this Member. 
+   * This field is stored as a text string and must be between 1 and 20 characters long.
    */
   public $city;
 
   /**
    * @string
+   * The second line of the address associated with this Member. 
+   * This field is stored as a text string and must be between 1 and 20 characters long.
    */
   public $address2;
 
   /**
    * @string
+   * The first line of the address associated with this Member. 
+   * This field is stored as a text string and must be between 1 and 100 characters long.
    */
   public $address1;
 
   /**
    * @integer
    * Indicates whether the Member is the 'primary' contact for the associated Merchant. Only one Member associated with each Merchant can be the 'primary' Member. 
-   * A value of '1' means primary, and a value of '0' means not primary.
+   * A value of '1' means primary and a value of '0' means not primary.
    */
   public $primary;
 
   /**
    * @integer
-   * Whether this Member is marked as inactive. A value of '1' means inactive, and a value of '0' means active.
+   * Whether this Member is marked as inactive. A value of '1' means inactive and a value of '0' means active.
    */
   public $inactive;
 
   /**
    * @integer
-   * Whether this Member should be marked as frozen. A value of '1' means frozen, and a value of '0' means not frozen.
+   * Whether this Member should be marked as frozen. A value of '1' means frozen and a value of '0' means not frozen.
    */
   public $frozen;
 

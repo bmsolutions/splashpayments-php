@@ -44,35 +44,35 @@ class credentials extends BaseResource {
   /**
    * @string
    * The name of this Credential resource. 
-   * This field is stored as a text string, and must be between 1 and 100 characters long.
+   * This field is stored as a text string and must be between 1 and 100 characters long.
    */
   public $name;
 
   /**
    * @string
    * A description of this Credential resource. 
-   * This field is stored as a text string, and must be between 1 and 100 characters long.
+   * This field is stored as a text string and must be between 1 and 100 characters long.
    */
   public $description;
 
   /**
    * @string
    * The username to use when authenticating to the integration associated with this Credential resource. 
-   * This field is stored as a text string, and must be between 1 and 50 characters long.
+   * This field is stored as a text string and must be between 1 and 50 characters long.
    */
   public $username;
 
   /**
    * @string
    * The password to use when authenticating to the integration associated with this Credential resource. 
-   * This field is stored as a text string, and must be between 1 and 50 characters long.
+   * This field is stored as a text string and must be between 1 and 50 characters long.
    */
   public $password;
 
   /**
    * @string
    * The username to use when connecting to the integration associated with this Credential resource. 
-   * This field is stored as a text string, and must be between 1 and 50 characters long. 
+   * This field is stored as a text string and must be between 1 and 50 characters long. 
    * This field is only necessary when it is required by the integration.
    */
   public $connectUsername;
@@ -80,7 +80,7 @@ class credentials extends BaseResource {
   /**
    * @string
    * The password to use when connecting to the integration associated with this Credential resource. 
-   * This field is stored as a text string, and must be between 1 and 50 characters long. 
+   * This field is stored as a text string and must be between 1 and 50 characters long. 
    * This field is only necessary when it is required by the integration.
    */
   public $connectPassword;
@@ -107,13 +107,13 @@ class credentials extends BaseResource {
 
   /**
    * @integer
-   * Whether this resource is marked as inactive. A value of '1' means inactive, and a value of '0' means active.
+   * Whether this resource is marked as inactive. A value of '1' means inactive and a value of '0' means active.
    */
   public $inactive;
 
   /**
    * @integer
-   * Whether this resource is marked as frozen. A value of '1' means frozen, and a value of '0' means not frozen.
+   * Whether this resource is marked as frozen. A value of '1' means frozen and a value of '0' means not frozen.
    */
   public $frozen;
 

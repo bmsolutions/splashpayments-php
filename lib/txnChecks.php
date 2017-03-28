@@ -129,7 +129,7 @@ class txnChecks extends BaseResource {
   /**
    * @integer
    * A date indicator that determines how far back in time time-based checks should be checked. This field works in conjunction with the 'periodFactor' field, which multiplies this basic period. 
-   * For example, maximum transaction volume within the last three weeks would use a 'period' value of '2' for 'weeks', and a 'periodSchedule' of '3', to indicate three weeks. 
+   * For example, maximum transaction volume within the last three weeks would use a 'period' value of '2' for 'weeks' and a 'periodSchedule' of '3', to indicate three weeks. 
    * Valid values are: 
    * '1': Days - the basic value for the date range is set in days. 
    * '2': Weeks - the basic value for the date range is set in weeks. 
@@ -159,13 +159,13 @@ class txnChecks extends BaseResource {
 
   /**
    * @integer
-   * Whether this resource is marked as inactive. A value of '1' means inactive, and a value of '0' means active.
+   * Whether this resource is marked as inactive. A value of '1' means inactive and a value of '0' means active.
    */
   public $inactive;
 
   /**
    * @integer
-   * Whether this resource is marked as frozen. A value of '1' means frozen, and a value of '0' means not frozen.
+   * Whether this resource is marked as frozen. A value of '1' means frozen and a value of '0' means not frozen.
    */
   public $frozen;
 
