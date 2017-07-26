@@ -58,6 +58,13 @@ class batches extends BaseResource {
   public $status;
 
   /**
+   * @string
+   * The merchant's reference code of the batch. 
+   * This field is stored as a text string and must be between 0 and 50 characters long.
+   */
+  public $clientRef;
+
+  /**
    * @integer
    * Whether this resource is marked as inactive. A value of '1' means inactive and a value of '0' means active.
    */

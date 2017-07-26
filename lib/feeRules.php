@@ -67,7 +67,7 @@ class feeRules extends BaseResource {
   public $type;
 
   /**
-   * @integer
+   * @string
    * The value to compare against when evaluating this Fee Rule. 
    * When the 'type' field is set to one of the comparison operators ('1 - Less than', '2 - Equal to', '3 - Not equal to', or '4 - Greater than'), this field represents the comparator value in cents. 
    * When the 'type' field is set to '5' (Swiped), this field represents the cardholder presence state to check the Transaction against. A value of '1' means that the card was swiped and the cardholder was present, while a value of '0' means that the card was not swiped and the cardholder was not present.
@@ -85,6 +85,13 @@ class feeRules extends BaseResource {
    * Whether this resource is marked as frozen. A value of '1' means frozen and a value of '0' means not frozen.
    */
   public $frozen;
+
+  /**
+   * @string
+   * A name for a group of rules to be applied in conjunction when evaluating this Fee Rule. 
+   * When grouping is used the Fee will be allowed to be processed if all rules are matched.
+   */
+  public $grouping;
 
 
 }

@@ -179,9 +179,16 @@ class txns extends BaseResource {
 
   /**
    * @string
+   * The descriptor used in this Transaction.  
+   * This field is stored as a text string and must be between 1 and 50 characters long. If a value is not set, an attempt is made to set a default value from the merchant information.
+   */
+  public $descriptor;
+
+  /**
+   * @string
    * The identifier of the terminal that processed this Transaction. 
    * The identifier is taken from the terminal system and varies in format according to the type of terminal. 
-   * This field is stored as a text string and must be between 0 and 8 characters long.
+   * This field is stored as a text string and must be between 0 and 50 characters long.
    */
   public $terminal;
 

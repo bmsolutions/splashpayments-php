@@ -43,6 +43,12 @@ class payoutFlows extends BaseResource {
 
   /**
    * @string
+   * The Login that will own the Payout resource. When set to null, the Payout resource will be owned by the triggerring Entity.
+   */
+  public $payoutLogin;
+
+  /**
+   * @string
    * The identifier of the Org that this payoutFlows resource applies to. 
    * If you set this field, then the payoutFlow applies to all Entities in the Org.
    */
@@ -103,6 +109,18 @@ class payoutFlows extends BaseResource {
    * @integer
    */
   public $minimum;
+
+  /**
+   * @integer
+   * Whether the Payout resource will be marked as inactive. A value of '1' means inactive and a value of '0' means active.
+   */
+  public $payoutInactive;
+
+  /**
+   * @integer
+   * Whether the Payout resource will be marked to skip the creation of disbursements on holidays and weekends. A value of '1' means skip and a value of '0' means do not skip.
+   */
+  public $skipOffDays;
 
   /**
    * @integer

@@ -56,7 +56,7 @@ class fundOrigins extends BaseResource {
   public $adjustment;
 
   /**
-   * @integer
+   * @string
    */
   public $amount;
 

@@ -122,12 +122,6 @@ class merchants extends BaseResource {
   public $tcVersion;
 
   /**
-   * @string
-   * The date and time on which this Merchant accepted the terms and conditions version in tcVersion.
-   */
-  public $tcDate;
-
-  /**
    * @integer
    * Whether this resource is marked as inactive. A value of '1' means inactive and a value of '0' means active.
    */

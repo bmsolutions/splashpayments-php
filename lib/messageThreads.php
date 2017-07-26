@@ -3,8 +3,8 @@ namespace SplashPayments;
 
 use SplashPayments\Exceptions\InvalidRequest;
 
-class adjustments extends BaseResource {
-  protected $resourceName = "adjustments";
+class messageThreads extends BaseResource {
+  protected $resourceName = "messageThreads";
   /**
    * @string
    * The ID of this resource.
@@ -37,53 +37,51 @@ class adjustments extends BaseResource {
 
   /**
    * @string
-   * The Login that owns this Adjustment.
+   * The identifier of the Login that owns this messageThreads resource.
    */
   public $login;
 
   /**
    * @string
-   * The Entity that will receive the set amount.
+   * The identifier of the receiving Login of this messageThreads resource.
    */
-  public $entity;
+  public $forlogin;
 
   /**
    * @string
-   * The Entity that will pay for the adjustment. 
-   * This is an optional field and should only be used when the amount is being transfered from the fromentity to the entity.
+   * The identifier of the TxnHold that is related to this messageThread
    */
-  public $fromentity;
+  public $txnHold;
 
   /**
    * @string
-   * A description of the Adjustment.
    */
-  public $description;
+  public $opposingMessageThread;
 
   /**
    * @string
-   * The amount of the Adjustment.
+   * Free-form text. By default, a messageThread resource is set as 'default'.
    */
-  public $amount;
+  public $folder;
 
   /**
    * @string
-   * The currency of the amount. 
-   * Currently, this field only accepts the value 'USD'.
+   * Free-form text that represents the name of the sender of a messageThread resource.
    */
-  public $currency;
+  public $sender;
 
   /**
    * @string
-   * The platform used for the adjustment. 
-   * This field is required if the adjustment is not between entities.
+   * Free-form text that represents the name of the recipient of a messageThread resource.
    */
-  public $platform;
+  public $recipient;
 
+  /**
+   * @string
+   * Free-form text for adding a subject to a messageThread resource.
+   */
+  public $subject;
 
-  public function update($params = array()) {
-      throw new \SplashPayments\Exceptions\InvalidRequest('Invalid Action');
-  }
 
   public function delete($params = array()) {
       throw new \SplashPayments\Exceptions\InvalidRequest('Invalid Action');

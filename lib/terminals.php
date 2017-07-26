@@ -140,6 +140,11 @@ class terminals extends BaseResource {
 
   /**
    * @integer
+   */
+  public $timezone;
+
+  /**
+   * @integer
    * The current status of the terminal. 
    * Valid values are: 
    * '0': Inactive. 

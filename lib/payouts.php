@@ -37,6 +37,12 @@ class payouts extends BaseResource {
 
   /**
    * @string
+   * The Login that owns this resource.
+   */
+  public $login;
+
+  /**
+   * @string
    * The identifier of the Account that this Payout is associated with. 
    * This account will either receive the funds or be debited for the funds every time a Disbursement occurs, depending on the direction of the Disbursement.
    */
@@ -135,6 +141,12 @@ class payouts extends BaseResource {
    * For example, a float value of 1000 would ensure that a balance of 10 USD is maintained at all times.
    */
   public $float;
+
+  /**
+   * @integer
+   * Whether to skip the creation of disbursements on holidays and weekends. A value of '1' means skip and a value of '0' means do not skip.
+   */
+  public $skipOffDays;
 
   /**
    * @integer

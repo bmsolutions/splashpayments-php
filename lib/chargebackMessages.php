@@ -122,6 +122,11 @@ class chargebackMessages extends BaseResource {
    */
   public $frozen;
 
+  /**
+   * @integer
+   */
+  public $imported;
+
 
   public function update($params = array()) {
       throw new \SplashPayments\Exceptions\InvalidRequest('Invalid Action');

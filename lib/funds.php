@@ -49,26 +49,26 @@ class funds extends BaseResource {
   public $currency;
 
   /**
-   * @integer
+   * @string
    * The amount held in this Fund that is marked as reserved. 
    * This field is specified as an integer in cents.
    */
   public $reserved;
 
   /**
-   * @integer
+   * @string
    */
   public $pending;
 
   /**
-   * @integer
+   * @string
    * The amount held in this Fund that is currently available for disbursement. 
    * This field is specified as an integer in cents.
    */
   public $available;
 
   /**
-   * @integer
+   * @string
    * The total amount held in this Fund. 
    * This field is specified as an integer in cents.
    */

@@ -55,11 +55,13 @@ class fees extends BaseResource {
   public $org;
 
   /**
-   * @string
-   * The identifier of the Entity who should pay this Fee on behalf of the Entity identified in the value of the 'forentity' field. 
-   * This field is optional. If it is set, then the Fee is charged to this Entity instead.
+   * @integer
+   * The type of the fee.  
+   * Valid values are: 
+   * '1': FEE - A regular Fee to be charged. 
+   * '2': ASSESSMENT - A fee chaged by a third-party platform.
    */
-  public $fromentity;
+  public $type;
 
   /**
    * @string
@@ -116,6 +118,14 @@ class fees extends BaseResource {
 
   /**
    * @integer
+   * The date on which charging of the Fee should end. 
+   * The date is specified as an eight digit string in YYYYMMDD format, for example, '20160120' for January 20, 2016. 
+   * The value of this field must represent a date in the future.
+   */
+  public $finish;
+
+  /**
+   * @integer
    * The unit of measure for this Fee. 
    * Valid values are: 
    * '2': The Fee is a fixed amount, specified in the 'amount' field as an integer in cents. 
@@ -124,7 +134,7 @@ class fees extends BaseResource {
   public $um;
 
   /**
-   * @integer
+   * @string
    * The total amount of this Fee. 
    * This field is specified as an integer. 
    * The units used in this field are determined by the value of the 'um' field on the Fee. If the 'um' field is set to 'percentage', then this field specifies the Fee percentage to levy in basis points. If the 'um' field is set to 'amount', then this field specifies the Fee in cents.

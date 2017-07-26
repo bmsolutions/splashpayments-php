@@ -156,6 +156,11 @@ class logins extends BaseResource {
   public $roles;
 
   /**
+   * @string
+   */
+  public $division;
+
+  /**
    * @integer
    * Whether this Login is marked as inactive. 
    * A value of '1' means inactive and a value of '0' means active.

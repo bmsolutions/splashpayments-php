@@ -123,6 +123,11 @@ class entities extends BaseResource {
   public $country;
 
   /**
+   * @integer
+   */
+  public $timezone;
+
+  /**
    * @string
    * The phone number associated with this Entity. 
    * This field is stored as a text string and must be between 10 and 15 characters long.
@@ -155,6 +160,31 @@ class entities extends BaseResource {
    * The IRS Employer ID (EID) number for the Entity.
    */
   public $ein;
+
+  /**
+   * @string
+   */
+  public $tcVersion;
+
+  /**
+   * @string
+   */
+  public $tcDate;
+
+  /**
+   * @string
+   */
+  public $tcIp;
+
+  /**
+   * @integer
+   */
+  public $tcAcceptDate;
+
+  /**
+   * @string
+   */
+  public $tcAcceptIp;
 
   /**
    * @string

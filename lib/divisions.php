@@ -3,8 +3,8 @@ namespace SplashPayments;
 
 use SplashPayments\Exceptions\InvalidRequest;
 
-class entryOrigins extends BaseResource {
-  protected $resourceName = "entryOrigins";
+class divisions extends BaseResource {
+  protected $resourceName = "divisions";
   /**
    * @string
    * The ID of this resource.
@@ -37,44 +37,22 @@ class entryOrigins extends BaseResource {
 
   /**
    * @string
+   * The Login that owns this resource.
    */
-  public $entry;
+  public $login;
 
   /**
    * @string
    */
-  public $txn;
+  public $name;
 
   /**
    * @string
    */
-  public $disbursement;
+  public $email;
 
-  /**
-   * @string
-   */
-  public $adjustment;
-
-  /**
-   * @string
-   */
-  public $cancellation;
-
-  /**
-   * @string
-   */
-  public $amount;
-
-
-  public function update($params = array()) {
-      throw new \SplashPayments\Exceptions\InvalidRequest('Invalid Action');
-  }
 
   public function delete($params = array()) {
-      throw new \SplashPayments\Exceptions\InvalidRequest('Invalid Action');
-  }
-
-  public function create($params = array()) {
       throw new \SplashPayments\Exceptions\InvalidRequest('Invalid Action');
   }
 

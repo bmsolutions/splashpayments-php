@@ -124,14 +124,14 @@ class entries extends BaseResource {
   public $description;
 
   /**
-   * @integer
+   * @string
    * The amount involved in this Entry. It refers to the amount charged, transferred, or disbursed. 
    * This field is specified as an integer in cents.
    */
   public $amount;
 
   /**
-   * @integer
+   * @string
    */
   public $unsourced;
 

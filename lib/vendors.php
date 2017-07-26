@@ -42,6 +42,11 @@ class vendors extends BaseResource {
   public $entity;
 
   /**
+   * @string
+   */
+  public $division;
+
+  /**
    * @integer
    * Whether this resource is marked as inactive. A value of '1' means inactive and a value of '0' means active.
    */
