@@ -56,6 +56,11 @@ class messageThreads extends BaseResource {
   /**
    * @string
    */
+  public $entityReturn;
+
+  /**
+   * @string
+   */
   public $opposingMessageThread;
 
   /**

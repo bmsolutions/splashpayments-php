@@ -1,10 +1,11 @@
 <?php 
 namespace SplashPayments\Http;
 
-use \SplashPayments\Exceptions\InvalidResponse;
-use \SplashPayments\Exceptions\Base;
-use \SplashPayments\Exceptions\InvalidRequest;
-use \SplashPayments\Exceptions\Connection;
+use \SplashPayments\Exceptions\InvalidResponse,
+    \SplashPayments\Exceptions\Base,
+    \SplashPayments\Exceptions\InvalidRequest,
+    \SplashPayments\Exceptions\Connection,
+    \SplashPayments\Utilities\Config;
 
 class Request {
   private static $instance;

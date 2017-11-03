@@ -111,7 +111,7 @@ class BaseResource {
     $Request = Request::getInstance();
 
     // Get request values
-    $values = $this->getRequestValues($params);
+    $values = $this->getRequestValues($params, true);
     if (!isset($values["id"])) {
       if (Config::exceptionsEnabled()) {
         throw new \SplashPayments\Exceptions\InvalidRequest("ID is required for this action");

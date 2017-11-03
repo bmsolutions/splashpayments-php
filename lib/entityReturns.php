@@ -3,8 +3,8 @@ namespace SplashPayments;
 
 use SplashPayments\Exceptions\InvalidRequest;
 
-class chargebacks extends BaseResource {
-  protected $resourceName = "chargebacks";
+class entityReturns extends BaseResource {
+  protected $resourceName = "entityReturns";
   /**
    * @string
    * The ID of this resource.
@@ -37,93 +37,52 @@ class chargebacks extends BaseResource {
 
   /**
    * @string
+   * The Login that owns this resource.
    */
-  public $merchant;
+  public $login;
 
   /**
    * @string
+   * The identifier of the Entity that this EntityReturns refers to.
+   */
+  public $entity;
+
+  /**
+   * @string
+   * The identifier of the Payment that this EntityReturns refers to.
+   */
+  public $payment;
+
+  /**
+   * @string
+   * This field indicates that this EntityReturn was triggered from a Transaction. 
+   * This field stores the identifier of the Transaction.
    */
   public $txn;
 
   /**
    * @string
+   * This field indicates that this EntityReturn was triggered from a Disbursement. 
+   * This field stores the identifier of the Disbursement.
    */
-  public $mid;
-
-  /**
-   * @string
-   */
-  public $description;
+  public $disbursement;
 
   /**
    * @integer
    */
-  public $total;
-
-  /**
-   * @integer
-   */
-  public $representedTotal;
-
-  /**
-   * @integer
-   */
-  public $cycle;
+  public $actionCode;
 
   /**
    * @string
+   * The code that is received from the platform.
    */
-  public $currency;
+  public $code;
 
   /**
    * @string
+   * The message that is received from the platform
    */
-  public $ref;
-
-  /**
-   * @string
-   */
-  public $reason;
-
-  /**
-   * @string
-   */
-  public $reasonCode;
-
-  /**
-   * @integer
-   */
-  public $issued;
-
-  /**
-   * @integer
-   */
-  public $received;
-
-  /**
-   * @integer
-   */
-  public $reply;
-
-  /**
-   * @string
-   */
-  public $bankRef;
-
-  /**
-   * @string
-   */
-  public $chargebackRef;
-
-  /**
-   * @integer
-   */
-  public $status;
-
-  /**
-   * @string
-   */
-  public $lastStatusChange;
+  public $message;
 
   /**
    * @integer
@@ -137,6 +96,10 @@ class chargebacks extends BaseResource {
    */
   public $frozen;
 
+
+  public function update($params = array()) {
+      throw new \SplashPayments\Exceptions\InvalidRequest('Invalid Action');
+  }
 
   public function delete($params = array()) {
       throw new \SplashPayments\Exceptions\InvalidRequest('Invalid Action');

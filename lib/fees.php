@@ -96,7 +96,16 @@ class fees extends BaseResource {
    * '13': Interchange - the Fee triggers when interchange Fees are assessed for the Transactions of this Merchant. 
    * '14': Processor - the Fee triggers when the Transactions of this Merchant are processed by a payment processor. 
    * '15': ACH failure - the Fee triggers when an automated clearing house failure occurs. 
-   * '16': Account - the Fee triggers when a bank account is verified.
+   * '16': Account - the Fee triggers when a bank account is verified. 
+   * '17': Sift - the Fee triggers when a txn uses SIFT for fraud checking. 
+   * '18': Adjustment - the Fee triggers when an adjustment is created. 
+   * '19': Retrieval - the Fee triggers when a chargeback retrieval is processed. 
+   * '20': Arbitration - the Fee triggers when a chargeback arbitration is processed. 
+   * '21': eCheck Sale - the Fee triggers when an eCheck sale is processed. 
+   * '22': eCheck Refund - the Fee triggers when an eCheck refund is processed. 
+   * '23': eCheck Return - the Fee triggers when an eCheck txn is returned because of a failure while processing. 
+   * '24': Settlement - the Fee triggers when a txn is settled. 
+   * '25': Misuse - the Fee triggers when a txn authorization is misused.
    */
   public $schedule;
 
@@ -123,6 +132,34 @@ class fees extends BaseResource {
    * The value of this field must represent a date in the future.
    */
   public $finish;
+
+  /**
+   * @integer
+   * Applies the fee based on the volume of a resource. 
+   * Valid values are: 
+   * '1': TXN - The total amount of all txns. 
+   * '2': TXNTAXID - The total amount of all txns per entity ein/tax id. 
+   * '3': TXNMERCHANT - The total amount of all txns per entity.
+   */
+  public $collection;
+
+  /**
+   * @integer
+   * A multiplier that you can use to adjust the set of data to be used in the collection calculation. 
+   * This field is specified as an integer and its value determines the period of time to be used. 
+   * Valid values are: 
+   * '1': DAYS. 
+   * '2': WEEKS. 
+   * '3': MONTHS. 
+   * '4': YEARS.
+   */
+  public $collectionFactor;
+
+  /**
+   * @integer
+   * The number of days, weeks, months or years to go back when selecting data for collection calculation.
+   */
+  public $collectionOffset;
 
   /**
    * @integer

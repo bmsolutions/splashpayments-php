@@ -37,9 +37,15 @@ class pendingEntries extends BaseResource {
 
   /**
    * @string
-   * The identifier of the Entity that this PendingEntry refers to.
+   * The identifier of the Entity that owns this PendingEntry.
    */
   public $entity;
+
+  /**
+   * @string
+   * The identifier of the Entity that this PendingEntry refers to. This is the owner of the record that triggered the charge.
+   */
+  public $onentity;
 
   /**
    * @string
@@ -67,6 +73,12 @@ class pendingEntries extends BaseResource {
    * @string
    */
   public $adjustment;
+
+  /**
+   * @string
+   * If the activity that this PendingEntry refers to is a ProfitShare, then this field stores the identifier of the corresponding ProfitShare resource.
+   */
+  public $profitShare;
 
   /**
    * @string

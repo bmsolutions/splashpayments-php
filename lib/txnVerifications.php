@@ -56,7 +56,7 @@ class txnVerifications extends BaseResource {
    * @integer
    * The type of check to perform. 
    * This field is specified as an integer. 
-   * Valid values are: n'1': Exceeded the maximum number of allowed failed authorizations. 
+   * Valid values are: '1': Exceeded the maximum number of allowed failed authorizations. 
    * '2': Exceeded the maximum allowed sale total value. 
    * '3': Exceeded the maximum allowed refund total value. 
    * '4': Exceeded the allowed maximum payment size (individual transaction amount). 
@@ -76,7 +76,7 @@ class txnVerifications extends BaseResource {
   /**
    * @integer
    * The score for this Transaction against the specific type of check. 
-   * This field is specified as an integer between 0 and 65535.
+   * This field is specified as an integer between 0 and 100.
    */
   public $score;
 

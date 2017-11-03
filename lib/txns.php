@@ -68,6 +68,11 @@ class txns extends BaseResource {
 
   /**
    * @string
+   */
+  public $fromtxn;
+
+  /**
+   * @string
    * If the Transaction is linked to a Batch, this field specifies the identifier of the Batch.
    */
   public $batch;
@@ -89,11 +94,11 @@ class txns extends BaseResource {
    * '4': Reverse Authorization. Reverses a prior Auth Transaction and releases the credit hold 
    * '5': Refund Transaction. Refunds a prior Capture or Sale Transaction (total may be specified for a partial refund). 
    * '7': Echeck Sale Transaction. Sale Transaction for ECheck payment. 
-   * '9': ECheck Refund Transaction. Refund Transaction for prior ECheck Sale Transaction. 
-   * '10': Echeck PreSale Transaction. Notification of imminent Echeck Sale Transaction. 
-   * '11': Echeck PreRefund Transaction. Notification of imminent Echeck Refund Transaction. 
-   * '12': Echeck Verification Transaction. Attempt to verify validity of Echeck payment prior to sale. 
-   * '13': Echeck Void Transaction. Voids prior Echeck transaction.
+   * '8': ECheck Refund Transaction. Refund Transaction for prior ECheck Sale Transaction. 
+   * '9': Echeck PreSale Transaction. Notification of imminent Echeck Sale Transaction. 
+   * '10': Echeck PreRefund Transaction. Notification of imminent Echeck Refund Transaction. 
+   * '11': Echeck Redeposit Transaction. Attempt to redeposit a prior failed eCheck Sale Transaction. 
+   * '12': Echeck Account Verification Transaction. Attempt to verify eCheck payment details
    */
   public $type;
 
@@ -191,6 +196,16 @@ class txns extends BaseResource {
    * This field is stored as a text string and must be between 0 and 50 characters long.
    */
   public $terminal;
+
+  /**
+   * @integer
+   */
+  public $terminalCapability;
+
+  /**
+   * @integer
+   */
+  public $entryMode;
 
   /**
    * @integer
@@ -388,6 +403,12 @@ class txns extends BaseResource {
    * '3': Move all funds from this Transaction into a reserve.
    */
   public $reserved;
+
+  /**
+   * @integer
+   * Indicates if an authorization has been misused by not being captured or reversed within the timeframe. The timeframe varies per network, mcc and type of txn closing (capture/reverse auth).
+   */
+  public $misused;
 
   /**
    * @string

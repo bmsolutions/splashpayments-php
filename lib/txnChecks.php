@@ -63,7 +63,7 @@ class txnChecks extends BaseResource {
    * @integer
    * The type of check to perform. 
    * This field is specified as an integer. 
-   * Valid values are: n'1': Exceeded the maximum number of allowed failed authorizations. 
+   * Valid values are: '1': Exceeded the maximum number of allowed failed authorizations. 
    * '2': Exceeded the maximum allowed sale total value. 
    * '3': Exceeded the maximum allowed refund total value. 
    * '4': Exceeded the allowed maximum payment size (individual transaction amount). 
@@ -134,7 +134,10 @@ class txnChecks extends BaseResource {
    * '1': Days - the basic value for the date range is set in days. 
    * '2': Weeks - the basic value for the date range is set in weeks. 
    * '3': Months - the basic value for the date range is set in months. 
-   * '4': Years - the basic value for the date range is set in days.
+   * '4': Years - the basic value for the date range is set in years. 
+   * '5': Seconds - the basic value for the date range is set in seconds. 
+   * '6': Minutes - the basic value for the date range is set in minutes. 
+   * '7': Years - the basic value for the date range is set in hours.
    */
   public $period;
 

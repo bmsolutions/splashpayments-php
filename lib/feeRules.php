@@ -67,6 +67,17 @@ class feeRules extends BaseResource {
   public $type;
 
   /**
+   * @integer
+   * Where the feeRule should apply. 
+   * This field is specified as an integer and indicates if the rule should apply to the fee itself, to the calculation of the collection or to both. 
+   * Valid values are: 
+   * '1': BOTH - The rule should apply to the fee and to the calculatioin of collections. 
+   * '2': FEE - The rule should apply only to the fee itself. 
+   * '3': COLLECTION - The fee should be only used when calculating a collection.
+   */
+  public $application;
+
+  /**
    * @string
    * The value to compare against when evaluating this Fee Rule. 
    * When the 'type' field is set to one of the comparison operators ('1 - Less than', '2 - Equal to', '3 - Not equal to', or '4 - Greater than'), this field represents the comparator value in cents. 
@@ -89,7 +100,7 @@ class feeRules extends BaseResource {
   /**
    * @string
    * A name for a group of rules to be applied in conjunction when evaluating this Fee Rule. 
-   * When grouping is used the Fee will be allowed to be processed if all rules are matched.
+   * When grouping is used the Fee will be allowed to be processed if at least one of the rules are matched.
    */
   public $grouping;
 

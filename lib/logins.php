@@ -50,7 +50,7 @@ class logins extends BaseResource {
   /**
    * @string
    * The username associated with this Login. 
-   * This field is stored as a text string and must be between 0 and 50 characters long.
+   * This field is stored as a text string, all lowercase, and must be between 0 and 50 characters long.
    */
   public $username;
 

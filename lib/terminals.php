@@ -50,6 +50,11 @@ class terminals extends BaseResource {
 
   /**
    * @integer
+   */
+  public $capability;
+
+  /**
+   * @integer
    * How is the terminal employed. 
    * Valid values are: 
    * '1': Retail. 
