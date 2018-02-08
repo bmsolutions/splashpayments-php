@@ -56,7 +56,8 @@ class adjustments extends BaseResource {
 
   /**
    * @string
-   * A description of the Adjustment.
+   * The description of this Decision Rule. 
+   * This field is stored as a text string and must be between 0 and 100 characters long.
    */
   public $description;
 
@@ -68,8 +69,7 @@ class adjustments extends BaseResource {
 
   /**
    * @string
-   * The currency of the amount. 
-   * Currently, this field only accepts the value 'USD'.
+   * The currency of the amount.
    */
   public $currency;
 

@@ -48,25 +48,25 @@ class messages extends BaseResource {
 
   /**
    * @integer
-   * Whether this resource is incoming or outgoing. By default, an outgoing message is assigned a '2' and incoming messages is assigned a '1'.
+   * Whether this resource is incoming or outgoing.
    */
   public $type;
 
   /**
    * @integer
-   * Whether this resource was automatically generated or not. A value of '1' means the message was auomatically generated and a value of '0' means it was manually generated.
+   * Whether this resource was automatically generated or not.
    */
   public $generated;
 
   /**
    * @integer
-   * Whether this resource is marked as secure. A value of '1' means messages will protected in email notifications and a value of '0' means the message will display entirely.
+   * Whether this resource is marked as secure.
    */
   public $secure;
 
   /**
    * @integer
-   * Whether this resource is marked as read. A value of '1' means the message has been read and a value of '0' means the message has not been read yet
+   * Whether this resource is marked as read.
    */
   public $read;
 

@@ -49,21 +49,13 @@ class orgFlows extends BaseResource {
 
   /**
    * @integer
-   * Whether this resource should affect logins recursively - in other words, affect this Login and all its child Logins. 
-   * Valid values are: 
-   * '0': Not recursive. The orgFlow only affects the Login identified in the 'forLogin' field. 
-   * '1': Recursive. The orgFlow affects the Login identified in the 'forLogin' field and all its child Logins.
+   * Whether this resource should affect logins recursively - in other words, affect this Login and all its child Logins.
    */
   public $recursive;
 
   /**
    * @integer
-   * This field sets the trigger that determines when this orgFlow runs.  
-   * Valid values are: 
-   * '1': Trigger at Merchant creation time. 
-   * '2': Trigger when a Merchant check returns a low score. 
-   * '3': Trigger when a Merchant check returns a high score. 
-   * '4': Trigger at Merchant boarding time.
+   * This field sets the trigger that determines when this orgFlow runs.
    */
   public $trigger;
 

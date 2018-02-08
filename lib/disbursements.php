@@ -85,6 +85,10 @@ class disbursements extends BaseResource {
    */
   public $platform;
 
+  /**
+   */
+  public $payment;
+
 
   public function update($params = array()) {
       throw new \SplashPayments\Exceptions\InvalidRequest('Invalid Action');

@@ -73,11 +73,7 @@ class profitShares extends BaseResource {
 
   /**
    * @integer
-   * Indicates if the profitShare should be processed when there is an income, expense or both. 
-   * Valid values are: 
-   * '1': Income - earnings will be shared between entities. 
-   * '2': Expense - loses will be shared between entities. 
-   * '3': Both - earnings and loses will be shared between entities.
+   * Indicates if the profitShare should be processed when there is an income, expense or both.
    */
   public $type;
 
@@ -105,13 +101,13 @@ class profitShares extends BaseResource {
 
   /**
    * @integer
-   * Whether this resource is marked as inactive. A value of '1' means inactive and a value of '0' means active.
+   * Whether this resource is marked as inactive.
    */
   public $inactive;
 
   /**
    * @integer
-   * Whether this resource is marked as frozen. A value of '1' means frozen and a value of '0' means not frozen.
+   * Whether this resource is marked as frozen.
    */
   public $frozen;
 

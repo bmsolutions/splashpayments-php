@@ -98,24 +98,7 @@ class assessments extends BaseResource {
 
   /**
    * @integer
-   * The type of event that triggered this assessments resource. 
-   * Valid values are: 
-   * '1': Daily - this assessment triggers every day. 
-   * '2': Weekly - this assessment triggers every week. 
-   * '3': Monthly - this assessment triggers every month. 
-   * '4': Annually - this assessment triggers every year. 
-   * '5': Single - this assessment is a one-off event. 
-   * '6': Auth - this assessment triggers at the time of authorization of a transaction. 
-   * '7': Capture - this assessment triggers at the capture time of a Transaction. 
-   * '8': Refund - this assessment triggers when a refund transaction is processed. 
-   * '9': Board - this assessment triggers when the Merchant is boarded. 
-   * '10': Payout - this assessment triggers when a payout is processed. 
-   * '11': Chargeback - this assessment triggers when a card chargeback occurs. 
-   * '12': Overdraft - this assessment triggers when an overdraft usage charge from a bank is levied. 
-   * '13': Interchange - this assessment triggers when interchange Fees are assessed for the Transactions of this Merchant. 
-   * '14': Processor - this assessment triggers when the Transactions of this Merchant are processed by a payment processor. 
-   * '15': ACH failure - this assessment triggers when an automated clearing house failure occurs. 
-   * '16': Account - this assessment triggers when a bank account is verified.
+   * The type of event that triggered this assessments resource.
    */
   public $event;
 
@@ -145,8 +128,7 @@ class assessments extends BaseResource {
 
   /**
    * @string
-   * The currency of the amount in this assessments resource. 
-   * Currently, this field only accepts the value 'USD'.
+   * The currency of the amount in this assessments resource.
    */
   public $currency;
 

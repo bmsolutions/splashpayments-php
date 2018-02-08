@@ -85,20 +85,7 @@ class txns extends BaseResource {
 
   /**
    * @integer
-   * The type of Transaction. 
-   * This field is specified as an integer. 
-   * Valid values are: 
-   * '1': Sale Transaction. This is the most common type of Transaction, it processes a sale and charges the customer, 
-   * '2': Auth Transaction. Authorizes and holds the requested total on the credit card, 
-   * '3': Capture Transaction. Finalizes a prior Auth Transaction and charges the customer, 
-   * '4': Reverse Authorization. Reverses a prior Auth Transaction and releases the credit hold 
-   * '5': Refund Transaction. Refunds a prior Capture or Sale Transaction (total may be specified for a partial refund). 
-   * '7': Echeck Sale Transaction. Sale Transaction for ECheck payment. 
-   * '8': ECheck Refund Transaction. Refund Transaction for prior ECheck Sale Transaction. 
-   * '9': Echeck PreSale Transaction. Notification of imminent Echeck Sale Transaction. 
-   * '10': Echeck PreRefund Transaction. Notification of imminent Echeck Refund Transaction. 
-   * '11': Echeck Redeposit Transaction. Attempt to redeposit a prior failed eCheck Sale Transaction. 
-   * '12': Echeck Account Verification Transaction. Attempt to verify eCheck payment details
+   * The type of Transaction.
    */
   public $type;
 
@@ -112,8 +99,7 @@ class txns extends BaseResource {
 
   /**
    * @string
-   * The currency of the txn. 
-   * Currently, this field only accepts the value 'USD'.
+   * The currency of the txn.
    */
   public $currency;
 
@@ -163,15 +149,14 @@ class txns extends BaseResource {
   /**
    * @integer
    * Whether to allow partial amount authorizations of this Transaction. 
-   * For example, if the transaction amount is $1000 and the processor only authorizes a smaller amount, then enabling this field  lets the Transaction proceed anyway. 
-   * A value of '1' means that partial amount authorizations are allowed and a value of '0' means that partial amount authorizations are not allowed.
+   * For example, if the transaction amount is $1000 and the processor only authorizes a smaller amount, then enabling this field  lets the Transaction proceed anyway.
    */
   public $allowPartial;
 
   /**
    * @string
    * The identifier of the Order associated with this Transaction. 
-   * This field is stored as a text string and must be between 0 and 20 characters long.
+   * This field is stored as a text string and must be between 0 and 200 characters long.
    */
   public $order;
 
@@ -209,15 +194,7 @@ class txns extends BaseResource {
 
   /**
    * @integer
-   * The origin of this Transaction. 
-   * Valid values are: 
-   * '1': Originated at a credit card terminal. 
-   * '2': Originated through an eCommerce system. 
-   * '3': Originated as a mail order or telephone order transaction. 
-   * '4': Originated with Apple Pay. 
-   * '5': Originated as a 3D Secure authorized transaction. 
-   * '6': Originated as a 3D Secure transaction. 
-   * '7': Originated as a recurring transaction on the card.
+   * The origin of this Transaction.
    */
   public $origin;
 
@@ -257,30 +234,26 @@ class txns extends BaseResource {
 
   /**
    * @integer
-   * Whether correct cvv was sent during this Transaction. A value of '1' means cvv was sent and was correct and a value of '0' means that cvv was not sent or was not correct.
+   * Whether correct cvv was sent during this Transaction.
    */
   public $cvv;
 
   /**
    * @integer
    * Whether the card was swiped during this Transaction. 
-   * This field is set to '1' automatically if 'track' data was received. 
-   * A value of '1' means swiped and a value of '0' means not swiped.
+   * This field is set to '1' automatically if 'track' data was received.
    */
   public $swiped;
 
   /**
    * @integer
-   * Whether the card was dipped (using the EMV chip) during this Transaction. 
-   * This field is set to '1' automatically if 'EMV' data was received. 
-   * A value of '1' means dipped and a value of '0' means not dipped.
+   * Whether the card was dipped (using the EMV chip) during this Transaction
    */
   public $emv;
 
   /**
    * @integer
    * Whether a signature was captured during this Transaction. 
-   * A value of '1' means a signature was captured and a value of '0' means a signature was not captured. 
    * You can set this field if you took a signature for the Transaction. The API also sets this field automatically if you associate a signature to the Transaction by creating a 'txnDatas' resource.
    */
   public $signature;
@@ -288,8 +261,7 @@ class txns extends BaseResource {
   /**
    * @integer
    * Whether the card was swiped at an unattended terminal during this Transaction. 
-   * This field is set to '0' by default. 
-   * A value of '1' means the terminal was unattended and a value of '0' means the terminal was attended.
+   * This field is set to '0' by default.
    */
   public $unattended;
 
@@ -382,7 +354,7 @@ class txns extends BaseResource {
 
   /**
    * @integer
-   * The status of the Transaction. Valid values are '0' (pending), '1' (approved), '2' (failed), '3' (captured), '4' (settled) and '5' (returned).
+   * The status of the Transaction.
    */
   public $status;
 
@@ -394,13 +366,7 @@ class txns extends BaseResource {
 
   /**
    * @integer
-   * Indicates whether the Transaction is reserved and the action that will be taken as a result. 
-   * This field is specified as an integer. 
-   * Valid values are: 
-   * '0': Not reserved 
-   * '1': If the Transaction is a sale or authorization, then block the capture of the Transaction. 
-   * '2': Apply a manual override to any checks on the Transaction and allow it to proceed and 
-   * '3': Move all funds from this Transaction into a reserve.
+   * Indicates whether the Transaction is reserved and the action that will be taken as a result.
    */
   public $reserved;
 
@@ -418,15 +384,30 @@ class txns extends BaseResource {
 
   /**
    * @integer
-   * Whether this resource is marked as inactive. A value of '1' means inactive and a value of '0' means active.
+   * Whether this resource is marked as inactive.
    */
   public $inactive;
 
   /**
    * @integer
-   * Whether this resource is marked as frozen. A value of '1' means frozen and a value of '0' means not frozen.
+   * Whether this resource is marked as frozen.
    */
   public $frozen;
+
+  /**
+   * @integer
+   */
+  public $discount;
+
+  /**
+   * @integer
+   */
+  public $shipping;
+
+  /**
+   * @integer
+   */
+  public $duty;
 
 
   public function delete($params = array()) {

@@ -3,8 +3,8 @@ namespace SplashPayments;
 
 use SplashPayments\Exceptions\InvalidRequest;
 
-class txnHolds extends BaseResource {
-  protected $resourceName = "txnHolds";
+class holds extends BaseResource {
+  protected $resourceName = "holds";
   /**
    * @string
    * The ID of this resource.
@@ -37,21 +37,21 @@ class txnHolds extends BaseResource {
 
   /**
    * @string
-   * The identifier of the Login that owns this txnHolds resource.
+   * The identifier of the Login that owns this holds resource.
    */
   public $login;
 
   /**
    * @string
-   * The identifier of the Txn that is being held with this txnHold.
+   * The identifier of the Txn that is being held with this hold.
    */
   public $txn;
 
   /**
    * @string
-   * If this txnHold resource was triggered through a txnVerification, then this field stores the identifier of the TxnVerification.
+   * If this hold resource was triggered through a verification, then this field stores the identifier of the Verification.
    */
-  public $txnVerification;
+  public $verification;
 
   /**
    * @integer
@@ -67,25 +67,25 @@ class txnHolds extends BaseResource {
 
   /**
    * @string
-   * If this txnHold was released, this will contain the timestamp for when it was released.
+   * If this hold was released, this will contain the timestamp for when it was released.
    */
   public $released;
 
   /**
    * @string
-   * If this txnHold was reviewed, this will contain the timestamp for when it was reviewed.
+   * If this hold was reviewed, this will contain the timestamp for when it was reviewed.
    */
   public $reviewed;
 
   /**
    * @integer
-   * Whether this resource is marked as inactive. A value of '1' means inactive and a value of '0' means active.
+   * Whether this resource is marked as inactive.
    */
   public $inactive;
 
   /**
    * @integer
-   * Whether this resource is marked as frozen. A value of '1' means frozen and a value of '0' means not frozen.
+   * Whether this resource is marked as frozen.
    */
   public $frozen;
 

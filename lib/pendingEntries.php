@@ -112,24 +112,7 @@ class pendingEntries extends BaseResource {
 
   /**
    * @integer
-   * The type of event that triggered this PendingEntry resource. 
-   * Valid values are: 
-   * '1': Daily - the PendingEntry triggers every day. 
-   * '2': Weekly - the PendingEntry triggers every week. 
-   * '3': Monthly - the PendingEntry triggers every month. 
-   * '4': Annually - the PendingEntry triggers every year. 
-   * '5': Single - the PendingEntry is a one-off event. 
-   * '6': Auth - the PendingEntry triggers at the time of authorization of a transaction. 
-   * '7': Capture - the PendingEntry triggers at the capture time of a Transaction. 
-   * '8': Refund - the PendingEntry triggers when a refund transaction is processed. 
-   * '9': Board - the PendingEntry triggers when the Merchant is boarded. 
-   * '10': Payout - the PendingEntry triggers when a payout is processed. 
-   * '11': Chargeback - the PendingEntry triggers when a card chargeback occurs. 
-   * '12': Overdraft - the PendingEntry triggers when an overdraft usage charge from a bank is levied. 
-   * '13': Interchange - the PendingEntry triggers when interchange Fees are assessed for the Transactions of this Merchant. 
-   * '14': Processor - the PendingEntry triggers when the Transactions of this Merchant are processed by a payment processor. 
-   * '15': ACH failure - the PendingEntry triggers when an automated clearing house failure occurs. 
-   * '16': Account - the PendingEntry triggers when a bank account is verified.
+   * The type of event that triggered this PendingEntry resource.
    */
   public $event;
 
@@ -154,7 +137,7 @@ class pendingEntries extends BaseResource {
 
   /**
    * @integer
-   * Whether this resource is marked as pending. A value of '1' means pending and a value of '0' means not pending.
+   * Whether this resource is marked as pending..
    */
   public $pending;
 

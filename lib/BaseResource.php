@@ -270,6 +270,7 @@ class BaseResource {
       foreach ($params as $key => $value) {
         $this->$key = $value;
       }
+      $params = null;
     }
     $requestOptions = $this->requestOptions;
     $resourceName = $this->resourceName;

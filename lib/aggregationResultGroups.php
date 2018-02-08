@@ -3,8 +3,8 @@ namespace SplashPayments;
 
 use SplashPayments\Exceptions\InvalidRequest;
 
-class txnResults extends BaseResource {
-  protected $resourceName = "txnResults";
+class aggregationResultGroups extends BaseResource {
+  protected $resourceName = "aggregationResultGroups";
   /**
    * @string
    * The ID of this resource.
@@ -37,39 +37,38 @@ class txnResults extends BaseResource {
 
   /**
    * @string
-   * The identifier of the Transaction associated with this txnResults resource.
+   * The identifier of the Aggregation that this AggregationResult refers to.
    */
-  public $txn;
+  public $aggregation;
 
   /**
    * @integer
-   * The type of this txnResult.
+   * The category number of the resource used in the aggregation. 
+   * This field is specified as an integer and is copied from the aggregation.
    */
-  public $type;
+  public $resource;
 
   /**
    * @string
-   * A message that accompanies and describes this Transaction result.
+   * The search query used to find records and apply the desired calculation. 
+   * This field is stored as a text string, must be between 0 and 1000 characters long, and is copied from the aggregation.
    */
-  public $message;
+  public $search;
 
   /**
-   * @integer
-   * The result code that is associated with this txnResult.
+   * @string
+   * The especification of the desired aggregation functions including count, sum, min and max. 
+   * This field is stored as a text string, must be between 1 and 100 characters long, and is copied from the aggregation.
    */
-  public $code;
+  public $totals;
 
   /**
    * @string
    */
-  public $bankCode;
+  public $lastModified;
 
 
   public function update($params = array()) {
-      throw new \SplashPayments\Exceptions\InvalidRequest('Invalid Action');
-  }
-
-  public function delete($params = array()) {
       throw new \SplashPayments\Exceptions\InvalidRequest('Invalid Action');
   }
 

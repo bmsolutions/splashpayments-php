@@ -63,30 +63,26 @@ class feeModifiers extends BaseResource {
 
   /**
    * @integer
-   * The unit of measure for the markup amount for the Fee. 
-   * Valid values are: 
-   * '2': The markup is a fixed amount, specified in the 'markupAmount' field as an integer in cents. 
-   * '1': The markup is a percentage of the fee amount, specified in the 'markupAmount' field in basis points.
+   * The unit of measure for the markup amount for the Fee.
    */
   public $markupUm;
 
   /**
    * @string
    * The total amount of the markup value for this Fee. 
-   * This field is specified as an integer. 
    * The units used in this field are determined by the value of the 'markupUm' field on the Fee. If the 'markupUm' field is set to 'percentage', then this field specifies the Fee percentage to levy in basis points. If the 'markupUm' field is set to 'actual', then this field specifies the markup amount in cents.
    */
   public $markupAmount;
 
   /**
    * @integer
-   * Whether this resource is marked as inactive. A value of '1' means inactive and a value of '0' means active.
+   * Whether this resource is marked as inactive.
    */
   public $inactive;
 
   /**
    * @integer
-   * Whether this resource is marked as frozen. A value of '1' means frozen and a value of '0' means not frozen.
+   * Whether this resource is marked as frozen.
    */
   public $frozen;
 

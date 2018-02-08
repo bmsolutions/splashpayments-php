@@ -68,9 +68,7 @@ class entities extends BaseResource {
 
   /**
    * @integer
-   * The type of Entity. 
-   * This field is specified as an integer. 
-   * Valid values are '0' (sole proprietor), '1' (corporation), '2' (limited liability company), '3' (partnership), '4' (association), '5' (non-profit organization) and '6' (government organization).
+   * The type of Entity.
    */
   public $type;
 
@@ -188,8 +186,7 @@ class entities extends BaseResource {
 
   /**
    * @string
-   * The currency of this Entity. 
-   * Currently, this field only accepts the value 'USD'.
+   * The currency of this Entity.
    */
   public $currency;
 
@@ -201,15 +198,21 @@ class entities extends BaseResource {
 
   /**
    * @integer
-   * Whether this resource is marked as inactive. A value of '1' means inactive and a value of '0' means active.
+   * Whether this resource is marked as inactive.
    */
   public $inactive;
 
   /**
    * @integer
-   * Whether this resource is marked as frozen. A value of '1' means frozen and a value of '0' means not frozen.
+   * Whether this resource is marked as frozen.
    */
   public $frozen;
+
+  /**
+   * @integer
+   * The Tax ID (TIN) status of the merchant.
+   */
+  public $tinStatus;
 
 
 }

@@ -43,18 +43,7 @@ class alertTriggers extends BaseResource {
 
   /**
    * @string
-   * The event type that triggers the associated Alert. 
-   * Valid values are: 
-   * 'create': Triggers when the associated  resource is created. 
-   * 'update': Triggers when the associated resource is updated. 
-   * 'delete': Triggers when the associated  resource is created. 
-   * 'ownership': Triggers when the ownership of the associated resource changes. 
-   * 'board': Triggers when a Merchant is boarded. 
-   * 'txnhold': Triggers when a transaction is held for review. 
-   * 'batch': Triggers when Transactions are captured in a batch. 
-   * 'account': Triggers when the Account associated with a Merchant is updated. 
-   * 'payout': Triggers when a Payout occurs. 
-   * 'fee': Triggers when an Entity is charged a Fee. 
+   * The event type that triggers the associated Alert.
    */
   public $event;
 
@@ -77,13 +66,13 @@ class alertTriggers extends BaseResource {
 
   /**
    * @integer
-   * Whether this resource is marked as inactive. A value of '1' means inactive and a value of '0' means active.
+   * Whether this resource is marked as inactive.
    */
   public $inactive;
 
   /**
    * @integer
-   * Whether this resource is marked as frozen. A value of '1' means frozen and a value of '0' means not frozen.
+   * Whether this resource is marked as frozen.
    */
   public $frozen;
 

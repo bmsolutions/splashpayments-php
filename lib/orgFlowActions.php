@@ -48,10 +48,7 @@ class orgFlowActions extends BaseResource {
 
   /**
    * @integer
-   * The action to take in relation to the Entity being processed.  
-   * Valid values are: 
-   * '1': Add the referenced Entity to the referenced Org. 
-   * '2': Remove the referenced Entity from the referenced Org.
+   * The action to take in relation to the Entity being processed.
    */
   public $action;
 

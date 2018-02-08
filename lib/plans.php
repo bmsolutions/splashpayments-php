@@ -58,7 +58,6 @@ class plans extends BaseResource {
   /**
    * @integer
    * The schedule that determines when the subscription related to this Plan is triggered.
-   *  Valid values are '1' (Daily), '2' (Weekly), '3' (Monthly) and '4' (Annually).
    */
   public $schedule;
 
@@ -66,7 +65,6 @@ class plans extends BaseResource {
    * @integer
    * A multiplier that you can use to adjust the schedule set in the 'schedule' field, such as daily, weekly, monthly, or annually. 
    * This field is specified as an integer and its value determines how the interval is multiplied. 
-   * For example, if 'schedule' is set to '1' (meaning 'daily'), then a 'scheduleFactor' value of '2' would cause the Subscription to trigger every two days.
    */
   public $scheduleFactor;
 
@@ -79,13 +77,13 @@ class plans extends BaseResource {
 
   /**
    * @integer
-   * Whether this resource is marked as inactive. A value of '1' means inactive and a value of '0' means active.
+   * Whether this resource is marked as inactive.
    */
   public $inactive;
 
   /**
    * @integer
-   * Whether this resource is marked as frozen. A value of '1' means frozen and a value of '0' means not frozen.
+   * Whether this resource is marked as frozen.
    */
   public $frozen;
 

@@ -3,8 +3,8 @@ namespace SplashPayments;
 
 use SplashPayments\Exceptions\InvalidRequest;
 
-class txnVerificationResults extends BaseResource {
-  protected $resourceName = "txnVerificationResults";
+class holdNotes extends BaseResource {
+  protected $resourceName = "holdNotes";
   /**
    * @string
    * The ID of this resource.
@@ -37,15 +37,21 @@ class txnVerificationResults extends BaseResource {
 
   /**
    * @string
-   * The identifier of the txnVerification associated with this txnVerificationResults resource.
+   * The identifier of the Hold that owns this holdNotes resource.
    */
-  public $txnVerification;
+  public $hold;
 
   /**
    * @string
-   * A message that describes the verification status.
+   * Free-form text for adding a message along with the action.
    */
-  public $message;
+  public $note;
+
+  /**
+   * @integer
+   * The desired action to take on the referenced Hold.
+   */
+  public $action;
 
 
   public function update($params = array()) {
@@ -53,10 +59,6 @@ class txnVerificationResults extends BaseResource {
   }
 
   public function delete($params = array()) {
-      throw new \SplashPayments\Exceptions\InvalidRequest('Invalid Action');
-  }
-
-  public function create($params = array()) {
       throw new \SplashPayments\Exceptions\InvalidRequest('Invalid Action');
   }
 

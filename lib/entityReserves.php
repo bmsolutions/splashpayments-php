@@ -54,6 +54,20 @@ class entityReserves extends BaseResource {
    */
   public $total;
 
+  /**
+   * @string
+   * The name of this EntityReserve. 
+   * This field is stored as a text string and must be between 0 and 50 characters long.
+   */
+  public $name;
+
+  /**
+   * @string
+   * A description of this EntityReserve. 
+   * This field is stored as a text string and must be between 0 and 100 characters long.
+   */
+  public $description;
+
 
   public function delete($params = array()) {
       throw new \SplashPayments\Exceptions\InvalidRequest('Invalid Action');

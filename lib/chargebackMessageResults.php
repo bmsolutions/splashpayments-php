@@ -43,10 +43,7 @@ class chargebackMessageResults extends BaseResource {
 
   /**
    * @integer
-   * The type of this chargebackMessageResult. 
-   * Valid values are: 
-   * '1': A general type of result. 
-   * '2': Platform message
+   * The type of this chargebackMessageResult.
    */
   public $type;
 

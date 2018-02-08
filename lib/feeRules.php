@@ -55,45 +55,31 @@ class feeRules extends BaseResource {
 
   /**
    * @integer
-   * The type of logic to apply with this Fee Rule. 
-   * This field is specified as an integer. 
-   * Valid values are: 
-   * '1': Less than - the Fee applies only if the triggered amount is lower than the amount set in the 'value' field of the Fee Rule, 
-   * '2': Equal to - the Fee applies only if the transaction amount is exactly the same as the amount set in the 'value' field of the Fee Rule, 
-   * '3': Not equal to - the Fee applies only if the transaction amount is not exactly equal to the amount set in the 'value' field of the Fee Rule, 
-   * '4': Greater than - the Fee applies only if the transaction amount is higher than the amount set in the 'value' field of the Fee Rule and 
-   * '5': Swiped - the Fee applies based on a determination of whether the cardholder was present during the transaction.
+   * The type of logic to apply with this Fee Rule.
    */
   public $type;
 
   /**
    * @integer
-   * Where the feeRule should apply. 
-   * This field is specified as an integer and indicates if the rule should apply to the fee itself, to the calculation of the collection or to both. 
-   * Valid values are: 
-   * '1': BOTH - The rule should apply to the fee and to the calculatioin of collections. 
-   * '2': FEE - The rule should apply only to the fee itself. 
-   * '3': COLLECTION - The fee should be only used when calculating a collection.
+   * Where the feeRule should apply.
    */
   public $application;
 
   /**
    * @string
-   * The value to compare against when evaluating this Fee Rule. 
-   * When the 'type' field is set to one of the comparison operators ('1 - Less than', '2 - Equal to', '3 - Not equal to', or '4 - Greater than'), this field represents the comparator value in cents. 
-   * When the 'type' field is set to '5' (Swiped), this field represents the cardholder presence state to check the Transaction against. A value of '1' means that the card was swiped and the cardholder was present, while a value of '0' means that the card was not swiped and the cardholder was not present.
+   * The value to compare against when evaluating this Fee Rule.
    */
   public $value;
 
   /**
    * @integer
-   * Whether this resource is marked as inactive. A value of '1' means inactive and a value of '0' means active.
+   * Whether this resource is marked as inactive.
    */
   public $inactive;
 
   /**
    * @integer
-   * Whether this resource is marked as frozen. A value of '1' means frozen and a value of '0' means not frozen.
+   * Whether this resource is marked as frozen.
    */
   public $frozen;
 

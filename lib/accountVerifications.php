@@ -43,10 +43,7 @@ class accountVerifications extends BaseResource {
 
   /**
    * @integer
-   * The type of account verification you want to perform. 
-   * Valid values are: 
-   * '1': Debit amount verification 
-   * '2': Credential verification.
+   * The type of account verification you want to perform.
    */
   public $type;
 

@@ -43,13 +43,13 @@ class permissions extends BaseResource {
 
   /**
    * @string
-   * If you are delegating Permissions from a Login that you own, then this field stores the identifier of the Login resource whose access you want to delegate.
+   * If you are delegating Permissions to a Login, then this field stores the identifier of the Login resource that should be granted the Permission.
    */
   public $fromlogin;
 
   /**
    * @string
-   * If you are delegating Permissions to a Login, then this field stores the identifier of the Login resource that should be granted the Permission.
+   * If you are delegating Permissions from a Login that you own, then this field stores the identifier of the Login resource whose access you want to delegate.
    */
   public $tologin;
 
@@ -72,63 +72,43 @@ class permissions extends BaseResource {
 
   /**
    * @integer
-   * The level of access to delegate to the target Login or Org to view resources of this type. 
-   * Valid values are: 
-   * '0': No delegation. Do not modify the privileges of the target Entity or Org. 
-   * '1': Allow. Grant this level of access.  
-   * '2': Deny. Prevent this level of access.
+   * The level of access to delegate to the target Login or Org to view resources of this type.
    */
   public $view;
 
   /**
    * @integer
-   * The level of access to delegate to the target Login or Org to add resources of this type. 
-   * Valid values are: 
-   * '0': No delegation. Do not modify the privileges of the target Entity or Org. 
-   * '1': Allow. Grant this level of access.  
-   * '2': Deny. Prevent this level of access.
+   * The level of access to delegate to the target Login or Org to add resources of this type.
    */
   public $add;
 
   /**
    * @integer
-   * The level of access to delegate to the target Login or Org to edit resources of this type. 
-   * Valid values are: 
-   * '0': No delegation. Do not modify the privileges of the target Entity or Org. 
-   * '1': Allow. Grant this level of access.  
-   * '2': Deny. Prevent this level of access.
+   * The level of access to delegate to the target Login or Org to edit resources of this type.
    */
   public $edit;
 
   /**
    * @integer
-   * The level of access to delegate to the target Login or Org to delete resources of this type. 
-   * Valid values are: 
-   * '0': No delegation. Do not modify the privileges of the target Entity or Org. 
-   * '1': Allow. Grant this level of access.  
-   * '2': Deny. Prevent this level of access.
+   * The level of access to delegate to the target Login or Org to delete resources of this type.
    */
   public $destroy;
 
   /**
    * @integer
-   * The level of access to delegate to the target Login or Org to reference resources of this type in other resources. 
-   * Valid values are: 
-   * '0': No delegation. Do not modify the privileges of the target Entity or Org. 
-   * '1': Allow. Grant this level of access.  
-   * '2': Deny. Prevent this level of access.
+   * The level of access to delegate to the target Login or Org to reference resources of this type in other resources.
    */
   public $reference;
 
   /**
    * @integer
-   * Whether this resource is marked as inactive. A value of '1' means inactive and a value of '0' means active.
+   * Whether this resource is marked as inactive.
    */
   public $inactive;
 
   /**
    * @integer
-   * Whether this resource is marked as frozen. A value of '1' means frozen and a value of '0' means not frozen.
+   * Whether this resource is marked as frozen.
    */
   public $frozen;
 

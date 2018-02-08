@@ -102,24 +102,7 @@ class entries extends BaseResource {
 
   /**
    * @integer
-   * The type of event that triggered this Entry resource. 
-   * Valid values are: 
-   * '1': Daily - the Entry triggers every day. 
-   * '2': Weekly - the Entry triggers every week. 
-   * '3': Monthly - the Entry triggers every month. 
-   * '4': Annually - the Entry triggers every year. 
-   * '5': Single - the Entry is a one-off event. 
-   * '6': Auth - the Entry triggers at the time of authorization of a transaction. 
-   * '7': Capture - the Entry triggers at the capture time of a Transaction. 
-   * '8': Refund - the Entry triggers when a refund transaction is processed. 
-   * '9': Board - the Entry triggers when the Merchant is boarded. 
-   * '10': Payout - the Entry triggers when a payout is processed. 
-   * '11': Chargeback - the Entry triggers when a card chargeback occurs. 
-   * '12': Overdraft - the Entry triggers when an overdraft usage charge from a bank is levied. 
-   * '13': Interchange - the Entry triggers when interchange Fees are assessed for the Transactions of this Merchant. 
-   * '14': Processor - the Entry triggers when the Transactions of this Merchant are processed by a payment processor. 
-   * '15': ACH failure - the Entry triggers when an automated clearing house failure occurs. 
-   * '16': Account - the Entry triggers when a bank account is verified.
+   * The type of event that triggered this Entry resource.
    */
   public $event;
 

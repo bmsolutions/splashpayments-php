@@ -48,12 +48,7 @@ class batches extends BaseResource {
 
   /**
    * @integer
-   * The current status of this Batch. 
-   * Valid values are: 
-   * '0': Open - This Batch can accept more Transactions. 
-   * '1': Closed - this Batch is closed to new Transactions and is ready to be sent to the processor. 
-   * '2': Processing - this Batch is being processed for settlement. 
-   * '3': Processed - this Batch has been processed.
+   * The current status of this Batch.
    */
   public $status;
 
@@ -66,13 +61,13 @@ class batches extends BaseResource {
 
   /**
    * @integer
-   * Whether this resource is marked as inactive. A value of '1' means inactive and a value of '0' means active.
+   * Whether this resource is marked as inactive.
    */
   public $inactive;
 
   /**
    * @integer
-   * Whether this resource is marked as frozen. A value of '1' means frozen and a value of '0' means not frozen.
+   * Whether this resource is marked as frozen.
    */
   public $frozen;
 

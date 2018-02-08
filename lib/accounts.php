@@ -69,38 +69,30 @@ class accounts extends BaseResource {
    * @integer
    * Indicates whether the Account is the 'primary' Account for the associated Entity. 
    * Only one Account associated with each Entity can be the 'primary' Account. 
-   * A value of '1' means the Account is the primary and a value of '0' means the Account is not the primary.
    */
   public $primary;
 
   /**
    * @integer
-   * The status of the Account. 
-   * Valid values are: 
-   * '0': Not Ready. The account holder is not yet ready to verify the Account. 
-   * '1': Ready. The account is ready to be verified. 
-   * '2': Challenged - the account has processed the challenge. 
-   * '3': Verified. The Account has been verified. 
-   * '4': Manual. There has been an issue during verification and further attempts to verify the Account will require manual intervention.
+   * The status of the Account
    */
   public $status;
 
   /**
    * @string
-   * The currency of this Account. 
-   * Currently, this field only accepts the value 'USD'.
+   * The currency of this Account.
    */
   public $currency;
 
   /**
    * @integer
-   * Whether this resource is marked as inactive. A value of '1' means inactive and a value of '0' means active.
+   * Whether this resource is marked as inactive.
    */
   public $inactive;
 
   /**
    * @integer
-   * Whether this resource is marked as frozen. A value of '1' means frozen and a value of '0' means not frozen.
+   * Whether this resource is marked as frozen.
    */
   public $frozen;
 

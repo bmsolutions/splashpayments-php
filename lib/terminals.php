@@ -55,30 +55,13 @@ class terminals extends BaseResource {
 
   /**
    * @integer
-   * How is the terminal employed. 
-   * Valid values are: 
-   * '1': Retail. 
-   * '2': Retail with tips. 
-   * '3': Restaurant. 
-   * '4': Lodging. 
-   * '5': Bar. 
-   * '6': Cash Advance. 
-   * '7': Mail/Telephone Order. 
-   * '8': Pay At The Pump. 
-   * '9': Service Rest. 
-   * '10': E-commerce. 
-   * '11': Direct Marketing. 
-   * '12': Fine Dining. 
-   * '13': Gift Card Only.
+   * How is the terminal employed.
    */
   public $environment;
 
   /**
    * @integer
-   * If the terminal should be manually or automatically closed for the day. 
-   * Valid values are: 
-   * '0': Automatic. 
-   * '1': Manual.
+   * If the terminal should be manually or automatically closed for the day.
    */
   public $autoClose;
 
@@ -126,7 +109,7 @@ class terminals extends BaseResource {
 
   /**
    * @string
-   * The U.S. state in the address associated with this Terminal's location. Valid values are: AL, AK, AZ, AR, CA, CO, CT, DE, DC, FL, GA, HI, ID, IL, IN, IA, KS, KY, LA, ME, MD, MA, MI, MN, MS, MO, MT, NE, NV, NH, NJ, NM, NY, NC, ND, OH, OK, OR, PA, RI, SC, SD, TN, TX, UT, VT, VA, WA, WV, WI and WY.
+   * The U.S. state in the address associated with this Terminal's location.
    */
   public $state;
 
@@ -150,11 +133,7 @@ class terminals extends BaseResource {
 
   /**
    * @integer
-   * The current status of the terminal. 
-   * Valid values are: 
-   * '0': Inactive. 
-   * '1': Active. 
-   * This field is optional and is set to Active by default.
+   * The current status of the terminal.
    */
   public $status;
 

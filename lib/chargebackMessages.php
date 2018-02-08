@@ -50,14 +50,7 @@ class chargebackMessages extends BaseResource {
 
   /**
    * @integer
-   * The type of this chargebackMessage.  
-   * Valid values are: 
-   * '1': Assign. Request to assign the Chargeback to another party. 
-   * '2': Notate. 
-   * '3': Accept liability. The Merchant accepts liability for this Chargeback. 
-   * '4': Represent. The Merchant wishes to dispute the Chargeback and request a representment. 
-   * '5': Respond. The Merchant requests a response from the other party. 
-   * '6': Request Arbitration. The Merchant wishes to enter arbitration to determine the outcome of the Chargeback
+   * The type of this chargebackMessage.
    */
   public $type;
 
@@ -87,8 +80,7 @@ class chargebackMessages extends BaseResource {
 
   /**
    * @string
-   * The currency of the amount in this chargebackMessage. 
-   * Currently, this field only accepts the value 'USD'.
+   * The currency of the amount in this chargebackMessage.
    */
   public $currency;
 
@@ -100,25 +92,19 @@ class chargebackMessages extends BaseResource {
 
   /**
    * @integer
-   * The current status of the Chargeback. 
-   * Valid values are: 
-   * '1': Requested. The Chargeback has been requested from the processor. 
-   * '2': Processing. The Chargeback is being processed by the card processor. 
-   * '3': Failed. The Chargeback has failed because of a technical problem. 
-   * '4': Denied. The issuer has denied the Chargeback. 
-   * '5': Processed. The Chargeback has been accepted and processed.
+   * The current status of the Chargeback.
    */
   public $status;
 
   /**
    * @integer
-   * Whether this resource is marked as inactive. A value of '1' means inactive and a value of '0' means active.
+   * Whether this resource is marked as inactive.
    */
   public $inactive;
 
   /**
    * @integer
-   * Whether this resource is marked as frozen. A value of '1' means frozen and a value of '0' means not frozen.
+   * Whether this resource is marked as frozen.
    */
   public $frozen;
 

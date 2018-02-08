@@ -37,23 +37,13 @@ class alertActions extends BaseResource {
 
   /**
    * @string
-   * The medium to use to deliver this Alert. 
-   * Valid values are: 
-   * 'email': Deliver the Alert to an email address. 
-   * 'web': Deliver the Alert through a web site notification. 
-   * 'app': Deliver the Alert through a mobile application notification. 
-   * 'sms': Deliver the Alert through an SMS message to a mobile device.
+   * The medium to use to deliver this Alert.': 
    */
   public $type;
 
   /**
    * @string
-   * When the 'type' field of this resource is set to 'web', this field determines the format that the Alert data should be sent in. 
-   *  Valid values are: 
-   * 'JSON': JSON document serialization. 
-   * 'XML': XML document serialization. 
-   * 'SOAP': SOAP XML document serialization. 
-   * 'FORM':HTML form data serialization.
+   * When the 'type' field of this resource is set to 'web', this field determines the format that the Alert data should be sent in.
    */
   public $options;
 

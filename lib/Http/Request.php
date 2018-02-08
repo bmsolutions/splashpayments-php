@@ -21,7 +21,7 @@ class Request {
                            $url,
                            $request = '',
                            $headers = array(),
-                           $connectTimeout = 5,
+                           $connectTimeout = 30,
                            $options = array()) {
     $ret = array(false, 0);
     $options = array(

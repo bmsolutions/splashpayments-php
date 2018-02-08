@@ -161,20 +161,19 @@ class members extends BaseResource {
 
   /**
    * @integer
-   * Indicates whether the Member is the 'primary' contact for the associated Merchant. Only one Member associated with each Merchant can be the 'primary' Member. 
-   * A value of '1' means primary and a value of '0' means not primary.
+   * Indicates whether the Member is the 'primary' contact for the associated Merchant. Only one Member associated with each Merchant can be the 'primary' Member.
    */
   public $primary;
 
   /**
    * @integer
-   * Whether this Member is marked as inactive. A value of '1' means inactive and a value of '0' means active.
+   * Whether this resource is marked as inactive.
    */
   public $inactive;
 
   /**
    * @integer
-   * Whether this Member should be marked as frozen. A value of '1' means frozen and a value of '0' means not frozen.
+   * Whether this resource is marked as frozen.
    */
   public $frozen;
 

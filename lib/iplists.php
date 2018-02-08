@@ -50,11 +50,7 @@ class iplists extends BaseResource {
 
   /**
    * @integer
-   * The type of this IP List. 
-   * This field is specified as an integer. 
-   * Valid values are: 
-   * '0': Blacklisted IP address range 
-   * '1': Whitelisted IP address range
+   * The type of this IP List.
    */
   public $type;
 
@@ -76,13 +72,13 @@ class iplists extends BaseResource {
 
   /**
    * @integer
-   * Whether this resource is marked as inactive. A value of '1' means inactive and a value of '0' means active.
+   * Whether this resource is marked as inactive.
    */
   public $inactive;
 
   /**
    * @integer
-   * Whether this resource is marked as frozen. A value of '1' means frozen and a value of '0' means not frozen.
+   * Whether this resource is marked as frozen.
    */
   public $frozen;
 

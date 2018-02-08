@@ -3,8 +3,8 @@ namespace SplashPayments;
 
 use SplashPayments\Exceptions\InvalidRequest;
 
-class sessions extends BaseResource {
-  protected $resourceName = "sessions";
+class decisionRules extends BaseResource {
+  protected $resourceName = "decisionRules";
   /**
    * @string
    * The ID of this resource.
@@ -37,21 +37,40 @@ class sessions extends BaseResource {
 
   /**
    * @string
-   * The Login that owns this resource.
+   * The identifier of the Decision that this Decision Rule applies.
    */
-  public $login;
+  public $decision;
+
+  /**
+   * @string
+   * The name of this Decision Rule. 
+   * This field is stored as a text string and must be between 0 and 100 characters long.
+   */
+  public $name;
 
   /**
    * @string
    */
-  public $key;
+  public $description;
 
   /**
    * @integer
-   * Whether this Session should have access to only public resources. 
-   * All other resources are private.
+   * The type of logic to apply with this Decision Rule.
    */
-  public $public;
+  public $type;
+
+  /**
+   * @string
+   * The value to compare against when evaluating this Decision Rule.
+   */
+  public $value;
+
+  /**
+   * @string
+   * A name for a group of rules to be applied in conjunction when evaluating this Decision Rule. 
+   * When grouping is used the Decision will be allowed to be processed if at least one of the rules are matched.
+   */
+  public $grouping;
 
   /**
    * @integer
@@ -65,10 +84,6 @@ class sessions extends BaseResource {
    */
   public $frozen;
 
-
-  public function update($params = array()) {
-      throw new \SplashPayments\Exceptions\InvalidRequest('Invalid Action');
-  }
 
 }
 

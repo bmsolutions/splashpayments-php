@@ -51,9 +51,7 @@ class chargebackDocuments extends BaseResource {
 
   /**
    * @string
-   * The type of the file that holds this chargebackDocument.  
-   * Valid values are: 
-   * 'jpg', 'jpeg', 'gif', 'png', 'pdf', 'tif', 'tiff'. 
+   * The type of the file that holds this chargebackDocument. 
    *  The value is set when the file is properly integrated, otherwise will be null.
    */
   public $type;
@@ -75,23 +73,19 @@ class chargebackDocuments extends BaseResource {
 
   /**
    * @integer
-   * The current status of the chargebackDocument. 
-   * Valid values are: 
-   * '0': Created. The ChargebackDocument has been created. 
-   * '1': Processed. The ChargebackDocument integration has been successful. 
-   * '2': Failed. The ChargebackDocument integration has failed.
+   * The current status of the chargebackDocument.
    */
   public $status;
 
   /**
    * @integer
-   * Whether this resource is marked as inactive. A value of '1' means inactive and a value of '0' means active.
+   * Whether this resource is marked as inactive.
    */
   public $inactive;
 
   /**
    * @integer
-   * Whether this resource is marked as frozen. A value of '1' means frozen and a value of '0' means not frozen.
+   * Whether this resource is marked as frozen.
    */
   public $frozen;
 

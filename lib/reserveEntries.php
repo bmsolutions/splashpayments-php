@@ -57,7 +57,7 @@ class reserveEntries extends BaseResource {
   /**
    * @string
    */
-  public $txnHold;
+  public $hold;
 
   /**
    * @string

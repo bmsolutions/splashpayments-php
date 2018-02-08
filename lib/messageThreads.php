@@ -49,9 +49,9 @@ class messageThreads extends BaseResource {
 
   /**
    * @string
-   * The identifier of the TxnHold that is related to this messageThread
+   * The identifier of the Hold that is related to this messageThread
    */
-  public $txnHold;
+  public $hold;
 
   /**
    * @string

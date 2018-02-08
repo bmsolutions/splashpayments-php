@@ -55,8 +55,7 @@ class merchants extends BaseResource {
 
   /**
    * @integer
-   * An indicator that specifies whether the Merchant is new to credit card processing. 
-   * A value of '1' means new and a value of '0' means not new. By default, merchants are considered to be new.
+   * An indicator that specifies whether the Merchant is new to credit card processing. By default, merchants are considered to be new.
    */
   public $new;
 
@@ -99,7 +98,7 @@ class merchants extends BaseResource {
 
   /**
    * @integer
-   * The status of the Merchant. Valid values are '0' (not ready), '1' (ready), '2' (boarded), '3' (manual) and '4' (denied).
+   * The status of the Merchant.
    */
   public $status;
 
@@ -110,26 +109,20 @@ class merchants extends BaseResource {
   public $boarded;
 
   /**
-   * @integer
-   * The Tax ID (TIN) status of the merchant. Valid values are '0' (pending), '1' (valid) and '2' (invalid).
+   * @string
+   * The date and time on which this Merchant accepted the terms and conditions version in tcVersion.
    */
-  public $tinStatus;
+  public $tcDate;
 
   /**
    * @integer
-   * An indicator showing the version of the terms and conditions that this Merchant has accepted. The API indicates the version as an integer.
-   */
-  public $tcVersion;
-
-  /**
-   * @integer
-   * Whether this resource is marked as inactive. A value of '1' means inactive and a value of '0' means active.
+   * Whether this resource is marked as inactive.
    */
   public $inactive;
 
   /**
    * @integer
-   * Whether this resource is marked as frozen. A value of '1' means frozen and a value of '0' means not frozen.
+   * Whether this resource is marked as frozen.
    */
   public $frozen;
 

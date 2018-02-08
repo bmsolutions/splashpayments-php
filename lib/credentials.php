@@ -92,28 +92,19 @@ class credentials extends BaseResource {
 
   /**
    * @integer
-   * The type of action that this Credential is authorized to perform. 
-   * Valid values are: 
-   * '1': Transaction - this Credential can be used to send Transactions to the processor. 
-   * '2': Batch - this Credential can be used to send Batches to the processor for settlement. 
-   * '3': Boarding - this Credential can be used to board a Merchant with the processor. 
-   * '4': Payout - this Credential can be used to send out a Payout instruction. 
-   * '5': Chargeback - this Credential can be used to retrieve or update a Chargeback with the processor. 
-   * '6': Report - this Credential can be used to receive reports from the processor. 
-   * '7': Account - this Credential can be used to verify a bank account when you use it with a bank account verification Integration. 
-   * '8': Verification - this Credential can be used to verify data about a Merchant when you use it with a merchant verification integration.
+   * The type of action that this Credential is authorized to perform.
    */
   public $type;
 
   /**
    * @integer
-   * Whether this resource is marked as inactive. A value of '1' means inactive and a value of '0' means active.
+   * Whether this resource is marked as inactive.
    */
   public $inactive;
 
   /**
    * @integer
-   * Whether this resource is marked as frozen. A value of '1' means frozen and a value of '0' means not frozen.
+   * Whether this resource is marked as frozen.
    */
   public $frozen;
 
