@@ -43,7 +43,7 @@ class refunds extends BaseResource {
 
   /**
    * @string
-   * A description of this Refund.  
+   * A description of this Refund. 
    * This field is stored as a text string and must be between 0 and 100 characters long.
    */
   public $description;

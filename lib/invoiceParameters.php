@@ -3,8 +3,8 @@ namespace SplashPayments;
 
 use SplashPayments\Exceptions\InvalidRequest;
 
-class items extends BaseResource {
-  protected $resourceName = "items";
+class invoiceParameters extends BaseResource {
+  protected $resourceName = "invoiceParameters";
   /**
    * @string
    * The ID of this resource.
@@ -37,39 +37,46 @@ class items extends BaseResource {
 
   /**
    * @string
+   * The identifier of the Login that owns this invoiceParameter resource.
    */
-  public $txn;
+  public $login;
 
   /**
    * @string
+   * The identifier of the Entity associated with this invoiceParameter.
    */
-  public $item;
+  public $entity;
 
   /**
    * @string
-   * A description of this Item. 
-   * This field is stored as a text string and must be between 0 and 100 characters long.
+   * The identifier of the Org associated with this invoiceParameter.
    */
-  public $description;
+  public $org;
 
   /**
    * @string
-   * A custom identifier for this line Item, such as a stock number or order code.
+   * The identifier of the Division associated with this invoiceParameter.
    */
-  public $custom;
+  public $division;
+
+  /**
+   * @string
+   * The type of invoiceParameter that we will be configuring
+   */
+  public $type;
+
+  /**
+   * @string
+   * The value of this type of invoiceParameter.
+   */
+  public $value;
 
   /**
    * @integer
-   * The quantity of this Item included in the Transaction.
+   * Whether this invoiceParameter is locked or not. 
+   * If it is locked then the value of this type of invoiceParameter will prevail.
    */
-  public $quantity;
-
-  /**
-   * @integer
-   * The amount charged for this Item. 
-   * This field is specified as an integer in cents.
-   */
-  public $price;
+  public $locked;
 
   /**
    * @integer
@@ -82,26 +89,6 @@ class items extends BaseResource {
    * Whether this resource is marked as frozen.
    */
   public $frozen;
-
-  /**
-   * @string
-   */
-  public $um;
-
-  /**
-   * @string
-   */
-  public $commodityCode;
-
-  /**
-   * @integer
-   */
-  public $total;
-
-  /**
-   * @integer
-   */
-  public $discount;
 
 
 }

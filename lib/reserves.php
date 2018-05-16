@@ -63,7 +63,7 @@ class reserves extends BaseResource {
 
   /**
    * @string
-   * A description of this Reserve.  
+   * A description of this Reserve. 
    * This field is stored as a text string and must be between 0 and 100 characters long.
    */
   public $description;
@@ -119,6 +119,11 @@ class reserves extends BaseResource {
    * The date is specified as an eight digit string in YYYYMMDD format, for example, '20160120' for January 20, 2016.
    */
   public $start;
+
+  /**
+   * @string
+   */
+  public $hold;
 
 
 }

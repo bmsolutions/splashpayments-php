@@ -69,7 +69,7 @@ class fees extends BaseResource {
 
   /**
    * @string
-   * A description of this Fee.  
+   * A description of this Fee. 
    * This field is stored as a text string and must be between 0 and 100 characters long.
    */
   public $description;

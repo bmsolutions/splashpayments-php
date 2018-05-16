@@ -3,8 +3,8 @@ namespace SplashPayments;
 
 use SplashPayments\Exceptions\InvalidRequest;
 
-class alerts extends BaseResource {
-  protected $resourceName = "alerts";
+class teamLogins extends BaseResource {
+  protected $resourceName = "teamLogins";
   /**
    * @string
    * The ID of this resource.
@@ -43,44 +43,44 @@ class alerts extends BaseResource {
 
   /**
    * @string
-   * The identifier of the Login that this Alert relates to. 
-   * The Alert is triggered based on the activity of this Login.
-   */
-  public $forlogin;
-
-  /**
-   * @string
+   * The identifier of the Team resource that the Login identified in the 'login' field should be marked as part of.
    */
   public $team;
 
   /**
-   * @string
-   * The name of this Alert. 
-   * This field is stored as a text string and must be between 1 and 100 characters long.
+   * @integer
+   * Create rights for this Login on this Team.
    */
-  public $name;
-
-  /**
-   * @string
-   */
-  public $description;
+  public $create;
 
   /**
    * @integer
-   * Whether this resource is marked as inactive.
    */
-  public $inactive;
+  public $read;
 
   /**
    * @integer
-   * Whether this resource is marked as frozen.
+   * Update rights for this Login on this Team.
    */
-  public $frozen;
+  public $update;
 
   /**
-   * @string
+   * @integer
+   * Delete rights for this Login on this Team.
    */
-  public $division;
+  public $delete;
+
+  /**
+   * @integer
+   * Reference use rights for this Login on this Team.
+   */
+  public $reference;
+
+  /**
+   * @integer
+   * Team administration rights for this Login on this Team.
+   */
+  public $teamAdmin;
 
 
 }

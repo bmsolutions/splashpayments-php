@@ -50,6 +50,23 @@ class Response {
      return $details;
    }
 
+   // Retrieve the totals array
+   public function getTotals() {
+     $totals = array(
+       'min'   => null,
+       'max'   => null,
+       'count' => null,
+       'sum'   => null
+     );
+     // Get the details
+     if (isset($this->response["response"]["details"]['totals'])) {
+       $responseTotals = $this->response["response"]["details"]['totals'];
+       // merge the empty array, with the totals from the response
+       $totals = array_replace($totals, $responseTotals);
+     }
+     return $totals;
+   }
+
    // Return the response as an array
    public function getErrors() {
      // Get the errors

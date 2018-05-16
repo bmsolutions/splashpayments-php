@@ -55,13 +55,7 @@ class holds extends BaseResource {
 
   /**
    * @integer
-   * The action taken on the referenced Txn. 
-   * This field is specified as an integer. 
-   * Valid values are: 
-   * '1': Block. Block the Transaction from proceeding. This returns an error. 
-   * '2': Reserved for future use. 
-   * '3': Hold. Hold the Transaction. It will not be captured until it is manually released. 
-   * '4': Reserve. Reserve the Transaction. The funds for the transaction will not be released until the Transaction is manually reviewed.
+   * The action taken on the referenced Txn.
    */
   public $action;
 
@@ -88,6 +82,11 @@ class holds extends BaseResource {
    * Whether this resource is marked as frozen.
    */
   public $frozen;
+
+  /**
+   * @string
+   */
+  public $entity;
 
 
   public function update($params = array()) {

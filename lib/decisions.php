@@ -60,7 +60,7 @@ class decisions extends BaseResource {
   public $decision;
 
   /**
-   * @integer
+   * @string
    * The type of check to perform.
    */
   public $type;
@@ -93,7 +93,7 @@ class decisions extends BaseResource {
   public $amount;
 
   /**
-   * @integer
+   * @string
    * The amount that the associated Transaction should be compared against. The units for this field depend on the type of check. 
    * For checks that are based on a ratio, specify the amount as a percentage in basis points. 
    * For checks that are based on a dollar amount, specify the amount in cents. 
@@ -102,7 +102,7 @@ class decisions extends BaseResource {
   public $value;
 
   /**
-   * @integer
+   * @string
    * A date indicator that determines how far back in time time-based checks should be checked. This field works in conjunction with the 'periodFactor' field, which multiplies this basic period.
    */
   public $period;
@@ -148,11 +148,6 @@ class decisions extends BaseResource {
   /**
    * @string
    */
-  public $partition;
-
-  /**
-   * @integer
-   */
   public $application;
 
   /**
@@ -161,6 +156,13 @@ class decisions extends BaseResource {
    * This field is specified as a sum of the desired options.
    */
   public $options;
+
+  /**
+   * @string
+   * The error message for the decision. 
+   * If the field is null the error message will be a generic failure message, if the field is empty the error message will be a specific error message, if the field is set to a string the error message will be that string.
+   */
+  public $errorMessage;
 
 
 }

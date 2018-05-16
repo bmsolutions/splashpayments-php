@@ -3,8 +3,8 @@ namespace SplashPayments;
 
 use SplashPayments\Exceptions\InvalidRequest;
 
-class profitShares extends BaseResource {
-  protected $resourceName = "profitShares";
+class secrets extends BaseResource {
+  protected $resourceName = "secrets";
   /**
    * @string
    * The ID of this resource.
@@ -37,61 +37,67 @@ class profitShares extends BaseResource {
 
   /**
    * @string
-   * The identifier of the Login that owns this ProfitShare.
+   * The identifier of the Login that owns this secret resource.
    */
   public $login;
 
   /**
    * @string
-   * The identifier of the Entity that this ProfitShare refers to. This is the entity that will receive the split income/expense.
+   * The identifier of the Entity associated with this secret.
    */
   public $entity;
 
   /**
    * @string
-   * The identifier of the Entity that will have it's earnings/expenses shared.
-   */
-  public $forentity;
-
-  /**
-   * @string
-   * The identifier of the Org in which entities will have their earnings/expenses shares.
+   * The identifier of the Org associated with this secret.
    */
   public $org;
 
   /**
    * @string
-   * The identifier of the Division in which entities will have their earnings/expenses shares.
+   * The identifier of the Division associated with this secret.
    */
   public $division;
 
   /**
-   * @integer
-   * Indicates if the profitShare should be processed when there is an income, expense or both.
+   * @string
+   * The type of secret.
    */
   public $type;
 
   /**
    * @string
-   * The name of this ProfitShare. 
+   * The platform of this secret.
+   */
+  public $platform;
+
+  /**
+   * @string
+   * The name of this Secret. 
    * This field is stored as a text string and must be between 0 and 100 characters long.
    */
   public $name;
 
   /**
    * @string
-   * A description of this ProfitShare. 
-   * This field is stored as a text string and must be between 0 and 100 characters long.
+   * A description of this Secret. 
+   * This field is stored as a text string and must be between 0 and 500 characters long.
    */
   public $description;
 
   /**
-   * @integer
-   * The percentage to be shared. 
-   * This field is specified as an integer between 1 and 10000. 
-   *  Percentages are calculated over the income/expense amount.
+   * @string
+   * The actual key or the indicator of which key to use. 
+   * This field is stored as a text string and must be between 1 and 1000 characters long.
    */
-  public $amount;
+  public $key;
+
+  /**
+   * @integer
+   * Whether this secret is locked or not. 
+   * If it is locked then the value of this type of secret will prevail.
+   */
+  public $locked;
 
   /**
    * @integer

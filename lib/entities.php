@@ -121,7 +121,8 @@ class entities extends BaseResource {
   public $country;
 
   /**
-   * @integer
+   * @string
+   * The timezone for the address associated with the Entity's location.
    */
   public $timezone;
 
@@ -149,7 +150,7 @@ class entities extends BaseResource {
   /**
    * @string
    * The web site URL associated with this Entity. 
-   * This field is stored as a text string and must be between 0 and 50 characters long.
+   * This field is stored as a text string and must be between 0 and 500 characters long.
    */
   public $website;
 
@@ -161,26 +162,31 @@ class entities extends BaseResource {
 
   /**
    * @string
+   * An indicator showing the version of the terms and conditions that this Entity has accepted. The API indicates the version as a string.
    */
   public $tcVersion;
 
   /**
    * @string
+   * Date the tcVersion was last updated.
    */
   public $tcDate;
 
   /**
    * @string
+   * IP address of client from last tcVersion update.
    */
   public $tcIp;
 
   /**
    * @integer
+   * Date and time on which this Entity accepted the Terms and Conditions, if different than tcDate.
    */
   public $tcAcceptDate;
 
   /**
    * @string
+   * IP address from which this Entity accepted the Terms and Conditions, if different than tcIp.
    */
   public $tcAcceptIp;
 
@@ -192,7 +198,7 @@ class entities extends BaseResource {
 
   /**
    * @string
-   * Custom, free-form field for client-supplied text.
+   * Custom, free-form field for client-supplied text, must be between 0 and 1000 characters long.
    */
   public $custom;
 
@@ -213,6 +219,23 @@ class entities extends BaseResource {
    * The Tax ID (TIN) status of the merchant.
    */
   public $tinStatus;
+
+  /**
+   * @integer
+   */
+  public $reserved;
+
+  /**
+   * @string
+   * The last stage completed for risk.
+   */
+  public $checkStage;
+
+  /**
+   * @integer
+   * Indicates whether this is a publicly held entity.
+   */
+  public $public;
 
 
 }

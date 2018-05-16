@@ -9,9 +9,11 @@ class RequestParams {
   private $expand = array();
   // Page to request
   private $page;
+  // Totals header to be used in the GET request
+  private $totals = array();
 
   // Class constructor
-  public function __construct($sort = "", $expand = array(), $page = 1) {
+  public function __construct($sort = "", $expand = array(), $page = 1, $totals = array()) {
     if (is_array($sort) && count($sort) == 2) {
       $this->sort = "{$sort[0]}[sort]={$sort[1]}";
     }
@@ -21,6 +23,7 @@ class RequestParams {
     if (is_array($expand)) {
       $this->expand = $expand;
     }
+    $this->totals($totals);
     $this->page = $page;
   }
 
@@ -76,6 +79,31 @@ class RequestParams {
     }
     else {
       $this->page = 1;
+    }
+  }
+
+  // Get the totals parameters
+  public function getTotals() {
+    if (count($this->totals)) {
+      return "TOTALS: " . implode('&', $this->totals);
+    }
+    return false;
+  }
+
+  // Set the totals parameter to be used in the GET requests
+  // the totals param must be an array with at least one of these keys (min | max | count | sum)
+  // each key will contain an array with all the values e.g. array("sum" => array ('approved', 'reserved'))
+  public function totals($array = array()) {
+    // Loop the action in the totals array (min | max | count | sum)
+    foreach($array as $totalsAction => $values) {
+      if (is_array($values) &&
+         ($totalsAction == 'min' || $totalsAction == 'max' ||
+          $totalsAction == 'count' || $totalsAction == 'sum')) {
+        // Loop the values inside each totals action
+        foreach($values as $value) {
+          $this->totals[] = "{$totalsAction}[]={$value}";
+        }
+      }
     }
   }
 }

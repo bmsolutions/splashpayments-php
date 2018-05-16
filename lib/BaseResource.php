@@ -26,6 +26,7 @@ class BaseResource {
 
     // Get request values
     $values = $this->getRequestValues($params);
+    // Get search params
     $search = $this->_buildSearch($values);
     if ($this->requestOptions) {
       $search .= $this->requestOptions->getSort();
@@ -33,16 +34,24 @@ class BaseResource {
     $search = rtrim($search, "&");
 
     // Set the headers
+    // Content type header
     $headers = array('Content-Type: application/json');
+    // Search header
     $headers[] = $search;
     $apiKey = Config::getApiKey();
 
     $sessionKey = Config::getSessionKey();
+    // Auth header
     if ($apiKey) {
       $headers[] = "APIKEY: {$apiKey}";
     }
     else if ($sessionKey) {
       $headers[] = "SESSIONKEY: {$sessionKey}"; 
+    }
+    // Totals header
+    $totals = $this->requestOptions->getTotals();
+    if ($totals) {
+       $headers[] = $totals;
     }
     // Set the url;
     $url = Config::getUrl();
@@ -236,6 +245,14 @@ class BaseResource {
       return array();
     }
     return $this->response->getDetails();
+  }
+
+  // Retrieve the totals of the response
+  public function getTotals() {
+    if (!$this->response) {
+      return array();
+    }
+    return $this->response->getTotals();
   }
 
   public function hasMore() {

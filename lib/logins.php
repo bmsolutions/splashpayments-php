@@ -124,21 +124,21 @@ class logins extends BaseResource {
   /**
    * @string
    * The name of the city in the address associated with this Login. 
-   * This field is stored as a text string and must be between 1 and 20 characters long.
+   * This field is stored as a text string and must be between 1 and 500 characters long.
    */
   public $city;
 
   /**
    * @string
    * The second line of the address associated with this Login. 
-   * This field is stored as a text string and must be between 1 and 20 characters long.
+   * This field is stored as a text string and must be between 1 and 500 characters long.
    */
   public $address2;
 
   /**
    * @string
    * The first line of the address associated with this Login. 
-   * This field is stored as a text string and must be between 1 and 100 characters long.
+   * This field is stored as a text string and must be between 1 and 500 characters long.
    */
   public $address1;
 
@@ -171,6 +171,16 @@ class logins extends BaseResource {
    * Whether this resource is marked as frozen.
    */
   public $frozen;
+
+  /**
+   * @string
+   */
+  public $allowedResources;
+
+  /**
+   * @string
+   */
+  public $restrictedResources;
 
   /**
    * @integer

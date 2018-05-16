@@ -3,8 +3,8 @@ namespace SplashPayments;
 
 use SplashPayments\Exceptions\InvalidRequest;
 
-class items extends BaseResource {
-  protected $resourceName = "items";
+class teams extends BaseResource {
+  protected $resourceName = "teams";
   /**
    * @string
    * The ID of this resource.
@@ -37,39 +37,29 @@ class items extends BaseResource {
 
   /**
    * @string
+   * The Login that owns this Team.
    */
-  public $txn;
+  public $login;
 
   /**
    * @string
-   */
-  public $item;
-
-  /**
-   * @string
-   * A description of this Item. 
+   * The name of this Team. 
    * This field is stored as a text string and must be between 0 and 100 characters long.
+   */
+  public $name;
+
+  /**
+   * @string
+   * A description of this Team. 
+   * This field is stored as a text string and must be between 0 and 500 characters long.
    */
   public $description;
 
   /**
-   * @string
-   * A custom identifier for this line Item, such as a stock number or order code.
-   */
-  public $custom;
-
-  /**
    * @integer
-   * The quantity of this Item included in the Transaction.
+   * Whether new Logins created by member Logins of this Team will be added to this team or not. Default is 0 (enabled).
    */
-  public $quantity;
-
-  /**
-   * @integer
-   * The amount charged for this Item. 
-   * This field is specified as an integer in cents.
-   */
-  public $price;
+  public $autoCascadeDisabled;
 
   /**
    * @integer
@@ -82,26 +72,6 @@ class items extends BaseResource {
    * Whether this resource is marked as frozen.
    */
   public $frozen;
-
-  /**
-   * @string
-   */
-  public $um;
-
-  /**
-   * @string
-   */
-  public $commodityCode;
-
-  /**
-   * @integer
-   */
-  public $total;
-
-  /**
-   * @integer
-   */
-  public $discount;
 
 
 }

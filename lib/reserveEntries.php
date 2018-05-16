@@ -82,7 +82,7 @@ class reserveEntries extends BaseResource {
 
   /**
    * @string
-   * A description of this reserveEntries resource.  
+   * A description of this reserveEntries resource. 
    * This field is stored as a text string and must be between 0 and 100 characters long.
    */
   public $description;

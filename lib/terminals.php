@@ -89,21 +89,21 @@ class terminals extends BaseResource {
   /**
    * @string
    * The first line of the address associated with this Terminal's location. 
-   * This field is stored as a text string and must be between 1 and 100 characters long.
+   * This field is stored as a text string and must be between 1 and 500 characters long.
    */
   public $address1;
 
   /**
    * @string
    * The second line of the address associated with this Terminal's location. 
-   * This field is stored as a text string and must be between 1 and 20 characters long.
+   * This field is stored as a text string and must be between 1 and 500 characters long.
    */
   public $address2;
 
   /**
    * @string
    * The name of the city in the address associated with this Terminal's location. 
-   * This field is stored as a text string and must be between 1 and 20 characters long.
+   * This field is stored as a text string and must be between 1 and 500 characters long.
    */
   public $city;
 
@@ -127,7 +127,8 @@ class terminals extends BaseResource {
   public $country;
 
   /**
-   * @integer
+   * @string
+   * The timezone for the address associated with the Terminal's location.
    */
   public $timezone;
 
@@ -136,6 +137,13 @@ class terminals extends BaseResource {
    * The current status of the terminal.
    */
   public $status;
+
+  /**
+   * @string
+   * The Phone number is the telephone number associated with the Terminal's location. 
+   * This field is stored as a text string and must be between 5 and 15 characters long and numeric characters only.
+   */
+  public $phone;
 
 
 }

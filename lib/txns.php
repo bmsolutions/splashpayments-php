@@ -55,7 +55,7 @@ class txns extends BaseResource {
 
   /**
    * @string
-   * The identifier of the Token associated with this Transaction.
+   * The token of the Tokens resource this Transaction is associated with.
    */
   public $token;
 
@@ -141,7 +141,7 @@ class txns extends BaseResource {
 
   /**
    * @integer
-   * The total amount that was settled.  
+   * The total amount that was settled. 
    * This field is specified as an integer in cents and is set automatically.
    */
   public $settledTotal;
@@ -156,20 +156,20 @@ class txns extends BaseResource {
   /**
    * @string
    * The identifier of the Order associated with this Transaction. 
-   * This field is stored as a text string and must be between 0 and 200 characters long.
+   * This field is stored as a text string and must be between 0 and 1000 characters long.
    */
   public $order;
 
   /**
    * @string
-   * A description of this Transaction.  
-   * This field is stored as a text string and must be between 0 and 100 characters long.
+   * A description of this Transaction. 
+   * This field is stored as a text string and must be between 0 and 1000 characters long.
    */
   public $description;
 
   /**
    * @string
-   * The descriptor used in this Transaction.  
+   * The descriptor used in this Transaction. 
    * This field is stored as a text string and must be between 1 and 50 characters long. If a value is not set, an attempt is made to set a default value from the merchant information.
    */
   public $descriptor;
@@ -305,21 +305,21 @@ class txns extends BaseResource {
   /**
    * @string
    * The first line of the address associated with this Transaction. 
-   * This field is stored as a text string and must be between 1 and 100 characters long.
+   * This field is stored as a text string and must be between 1 and 500 characters long.
    */
   public $address1;
 
   /**
    * @string
    * The second line of the address associated with this Transaction. 
-   * This field is stored as a text string and must be between 1 and 20 characters long.
+   * This field is stored as a text string and must be between 1 and 500 characters long.
    */
   public $address2;
 
   /**
    * @string
    * The name of the city in the address associated with this Transaction. 
-   * This field is stored as a text string and must be between 1 and 20 characters long.
+   * This field is stored as a text string and must be between 1 and 500 characters long.
    */
   public $city;
 

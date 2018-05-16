@@ -110,7 +110,7 @@ class merchants extends BaseResource {
 
   /**
    * @string
-   * The date and time on which this Merchant accepted the terms and conditions version in tcVersion.
+   * Date the tcVersion was last updated.
    */
   public $tcDate;
 
@@ -125,6 +125,12 @@ class merchants extends BaseResource {
    * Whether this resource is marked as frozen.
    */
   public $frozen;
+
+  /**
+   * @string
+   * The environment which the Merchant is in, if applicable.
+   */
+  public $environment;
 
 
 }

@@ -49,15 +49,19 @@ class orgFlows extends BaseResource {
 
   /**
    * @integer
-   * Whether this resource should affect logins recursively - in other words, affect this Login and all its child Logins.
-   */
-  public $recursive;
-
-  /**
-   * @integer
    * This field sets the trigger that determines when this orgFlow runs.
    */
   public $trigger;
+
+  /**
+   * @string
+   */
+  public $team;
+
+  /**
+   * @string
+   */
+  public $division;
 
 
 }

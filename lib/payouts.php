@@ -43,7 +43,7 @@ class payouts extends BaseResource {
 
   /**
    * @string
-   * The identifier of the Account that this Payout is associated with. 
+   * The token of the Account that this Payout is associated with. 
    * This account will either receive the funds or be debited for the funds every time a Disbursement occurs, depending on the direction of the Disbursement.
    */
   public $account;
@@ -69,7 +69,7 @@ class payouts extends BaseResource {
 
   /**
    * @string
-   * A description of this Payout.  
+   * A description of this Payout. 
    * This field is stored as a text string and must be between 0 and 100 characters long.
    */
   public $description;
@@ -112,7 +112,7 @@ class payouts extends BaseResource {
 
   /**
    * @integer
-   * The total amount of the Payout resource that is created. 
+   * The total amount of this Payout. 
    * The units used in this field are determined by the value of the 'um' field on the Payout. If the 'um' field is set to '1' or '3', then this field specifies the Payout percentage to levy in basis points. If the 'um' field is set to '2', then this field specifies the Payout in cents.
    */
   public $amount;

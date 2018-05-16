@@ -67,7 +67,7 @@ class subscriptions extends BaseResource {
 
   /**
    * @string
-   * The descriptor used in this Subscription.  
+   * The descriptor used in this Subscription. 
    * This field is stored as a text string and must be between 1 and 50 characters long. If a value is not set, an attempt is made to set a default value from the merchant information.
    */
   public $descriptor;

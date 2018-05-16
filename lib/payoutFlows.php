@@ -126,12 +126,6 @@ class payoutFlows extends BaseResource {
    */
   public $division;
 
-  /**
-   * @string
-   * The identifier of the Partition in which entities will have automated payouts generated.
-   */
-  public $partition;
-
 
 }
 
