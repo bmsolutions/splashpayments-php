@@ -77,13 +77,13 @@ class aggregations extends BaseResource {
   public $totals;
 
   /**
-   * @integer
+   * @string
    * The current status of the aggregation process.
    */
   public $status;
 
   /**
-   * @integer
+   * @string
    * The schedule that determines when the aggregation function will be processed.
    */
   public $schedule;

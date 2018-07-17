@@ -46,7 +46,7 @@ class chargebackStatuses extends BaseResource {
   public $chargebackMessage;
 
   /**
-   * @integer
+   * @string
    */
   public $status;
 

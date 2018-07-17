@@ -91,7 +91,7 @@ class credentials extends BaseResource {
   public $integration;
 
   /**
-   * @integer
+   * @string
    * The type of action that this Credential is authorized to perform.
    */
   public $type;

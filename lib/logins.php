@@ -157,6 +157,7 @@ class logins extends BaseResource {
 
   /**
    * @string
+   * The division that this Login belongs to.
    */
   public $division;
 
@@ -181,6 +182,12 @@ class logins extends BaseResource {
    * @string
    */
   public $restrictedResources;
+
+  /**
+   * @string
+   * The parent division that this Login belongs to. Children of this Login will inherit its parent division.
+   */
+  public $parentDivision;
 
   /**
    * @integer

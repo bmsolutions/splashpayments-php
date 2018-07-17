@@ -41,7 +41,7 @@ class merchantResults extends BaseResource {
   public $merchant;
 
   /**
-   * @integer
+   * @string
    */
   public $type;
 

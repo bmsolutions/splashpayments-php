@@ -47,7 +47,7 @@ class orgFlowActions extends BaseResource {
   public $org;
 
   /**
-   * @integer
+   * @string
    * The action to take in relation to the Entity being processed.
    */
   public $action;

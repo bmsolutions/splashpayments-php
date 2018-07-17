@@ -3,8 +3,8 @@ namespace SplashPayments;
 
 use SplashPayments\Exceptions\InvalidRequest;
 
-class confirmCodes extends BaseResource {
-  protected $resourceName = "confirmCodes";
+class profitShareRules extends BaseResource {
+  protected $resourceName = "profitShareRules";
   /**
    * @string
    * The ID of this resource.
@@ -37,21 +37,40 @@ class confirmCodes extends BaseResource {
 
   /**
    * @string
-   * The identifier of the Login resource that this confirmation code relates to.
+   * The identifier of the ProfitShare that this ProfitShare Rule applies to.
    */
-  public $login;
+  public $profitShare;
 
   /**
    * @string
-   * The type of this confirmCode.
+   * The name of this ProfitShare Rule. 
+   * This field is stored as a text string and must be between 0 and 100 characters long.
+   */
+  public $name;
+
+  /**
+   * @string
+   */
+  public $description;
+
+  /**
+   * @string
+   * The type of logic to apply with this ProfitShare Rule.
    */
   public $type;
 
   /**
    * @string
-   * If the 'type' of this confirmation code is '2' (email), then this field represents the email address that requires verification.
+   * The value to compare against when evaluating this ProfitShare Rule.
    */
-  public $email;
+  public $value;
+
+  /**
+   * @string
+   * A name for a group of rules to be applied in conjunction when evaluating this ProfitShare Rule. 
+   * When grouping is used the ProfitShare will be allowed to be processed if at least one of the rules are matched.
+   */
+  public $grouping;
 
   /**
    * @integer
@@ -65,10 +84,6 @@ class confirmCodes extends BaseResource {
    */
   public $frozen;
 
-
-  public function update($params = array()) {
-      throw new \SplashPayments\Exceptions\InvalidRequest('Invalid Action');
-  }
 
 }
 

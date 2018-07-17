@@ -72,7 +72,7 @@ class chargebackDocuments extends BaseResource {
   public $description;
 
   /**
-   * @integer
+   * @string
    * The current status of the chargebackDocument.
    */
   public $status;

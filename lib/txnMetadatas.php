@@ -3,8 +3,8 @@ namespace SplashPayments;
 
 use SplashPayments\Exceptions\InvalidRequest;
 
-class disbursementResults extends BaseResource {
-  protected $resourceName = "disbursementResults";
+class txnMetadatas extends BaseResource {
+  protected $resourceName = "txnMetadatas";
   /**
    * @string
    * The ID of this resource.
@@ -37,23 +37,28 @@ class disbursementResults extends BaseResource {
 
   /**
    * @string
+   * The identifier of the Transaction associated with this TxnMetadatas resource.
    */
-  public $disbursement;
+  public $txn;
 
   /**
    * @string
+   * The type of TxnMetadatas.
    */
-  public $code;
+  public $type;
 
   /**
    * @string
+   * The field being stored.
    */
-  public $platform;
+  public $field;
 
   /**
    * @string
+   * The value of the field. 
+   * This field is stored as a text string and must be between 1 and 100 characters long.
    */
-  public $message;
+  public $value;
 
 
   public function update($params = array()) {

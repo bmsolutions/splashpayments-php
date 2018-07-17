@@ -42,7 +42,7 @@ class terminals extends BaseResource {
   public $merchant;
 
   /**
-   * @integer
+   * @string
    * The type of terminal. 
    * This field is stored as an integer and must be between 1 and 417.
    */

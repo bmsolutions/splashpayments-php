@@ -48,11 +48,6 @@ class chargebacks extends BaseResource {
   /**
    * @string
    */
-  public $mid;
-
-  /**
-   * @string
-   */
   public $description;
 
   /**
@@ -66,7 +61,7 @@ class chargebacks extends BaseResource {
   public $representedTotal;
 
   /**
-   * @integer
+   * @string
    */
   public $cycle;
 
@@ -116,7 +111,7 @@ class chargebacks extends BaseResource {
   public $chargebackRef;
 
   /**
-   * @integer
+   * @string
    */
   public $status;
 
@@ -137,6 +132,10 @@ class chargebacks extends BaseResource {
    */
   public $frozen;
 
+
+  public function update($params = array()) {
+      throw new \SplashPayments\Exceptions\InvalidRequest('Invalid Action');
+  }
 
   public function delete($params = array()) {
       throw new \SplashPayments\Exceptions\InvalidRequest('Invalid Action');

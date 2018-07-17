@@ -61,13 +61,13 @@ class payoutFlows extends BaseResource {
   public $entity;
 
   /**
-   * @integer
+   * @string
    * The event on the Org or Entity that should trigger the creation of an associated Payout resource.
    */
   public $trigger;
 
   /**
-   * @integer
+   * @string
    * The schedule that determines when the Payout resource that is created should be triggered to be paid.
    */
   public $schedule;
@@ -81,7 +81,7 @@ class payoutFlows extends BaseResource {
   public $scheduleFactor;
 
   /**
-   * @integer
+   * @string
    * The unit of measure for the Payout resource that is created. For example, if the Entity has a negative balance of $10 and the amount is set to 10000 (100%), then $10 will be drawn from their account to fully replenish the balance to $0.
    */
   public $um;

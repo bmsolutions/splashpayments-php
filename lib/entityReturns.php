@@ -66,7 +66,7 @@ class entityReturns extends BaseResource {
   public $disbursement;
 
   /**
-   * @integer
+   * @string
    */
   public $actionCode;
 

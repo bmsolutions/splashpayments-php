@@ -49,7 +49,7 @@ class chargebackMessages extends BaseResource {
   public $date;
 
   /**
-   * @integer
+   * @string
    * The type of this chargebackMessage.
    */
   public $type;
@@ -91,7 +91,7 @@ class chargebackMessages extends BaseResource {
   public $note;
 
   /**
-   * @integer
+   * @string
    * The current status of the Chargeback.
    */
   public $status;

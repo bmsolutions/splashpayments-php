@@ -87,6 +87,11 @@ class plans extends BaseResource {
    */
   public $frozen;
 
+  /**
+   * @integer
+   */
+  public $maxFailures;
+
 
 }
 

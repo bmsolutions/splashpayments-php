@@ -216,7 +216,7 @@ class entities extends BaseResource {
 
   /**
    * @integer
-   * The Tax ID (TIN) status of the merchant.
+   * The Tax ID (TIN) status of the entity.
    */
   public $tinStatus;
 
@@ -236,6 +236,13 @@ class entities extends BaseResource {
    * Indicates whether this is a publicly held entity.
    */
   public $public;
+
+  /**
+   * @string
+   * The customer service phone number associated with this Entity. For Merchants, this number will be displayed on the customer's credit card statement. 
+   * This field is stored as a text string and must be between 10 and 15 characters long.
+   */
+  public $customerPhone;
 
 
 }

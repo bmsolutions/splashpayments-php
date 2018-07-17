@@ -54,13 +54,13 @@ class feeRules extends BaseResource {
   public $description;
 
   /**
-   * @integer
+   * @string
    * The type of logic to apply with this Fee Rule.
    */
   public $type;
 
   /**
-   * @integer
+   * @string
    * Where the feeRule should apply.
    */
   public $application;

@@ -66,7 +66,7 @@ class profitShares extends BaseResource {
   public $division;
 
   /**
-   * @integer
+   * @string
    * Indicates if the profitShare should be processed when there is an income, expense or both.
    */
   public $type;

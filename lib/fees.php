@@ -154,6 +154,12 @@ class fees extends BaseResource {
    */
   public $frozen;
 
+  /**
+   * @integer
+   * Indicator to extract fee from txn supplied fee. When set, amount will correspond to the fee amount in the txn and only that amount will be extractable, anything over that amount will not be extracted.
+   */
+  public $txnFee;
+
 
 }
 

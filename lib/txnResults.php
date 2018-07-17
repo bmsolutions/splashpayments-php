@@ -64,6 +64,11 @@ class txnResults extends BaseResource {
    */
   public $bankCode;
 
+  /**
+   * @string
+   */
+  public $originalCode;
+
 
   public function update($params = array()) {
       throw new \SplashPayments\Exceptions\InvalidRequest('Invalid Action');

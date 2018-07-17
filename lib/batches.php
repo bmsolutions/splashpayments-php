@@ -47,7 +47,7 @@ class batches extends BaseResource {
   public $date;
 
   /**
-   * @integer
+   * @string
    * The current status of this Batch.
    */
   public $status;

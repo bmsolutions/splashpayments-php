@@ -48,7 +48,7 @@ class holdNotes extends BaseResource {
   public $note;
 
   /**
-   * @integer
+   * @string
    * The desired action to take on the referenced Hold.
    */
   public $action;

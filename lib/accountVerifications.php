@@ -42,7 +42,7 @@ class accountVerifications extends BaseResource {
   public $account;
 
   /**
-   * @integer
+   * @string
    * The type of account verification you want to perform.
    */
   public $type;

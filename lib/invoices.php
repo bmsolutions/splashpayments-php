@@ -117,6 +117,23 @@ class invoices extends BaseResource {
    */
   public $sendOn;
 
+  /**
+   * @string
+   */
+  public $emailStatus;
+
+  /**
+   * @integer
+   * Whether this resource is marked as inactive.
+   */
+  public $inactive;
+
+  /**
+   * @integer
+   * Whether this resource is marked as frozen.
+   */
+  public $frozen;
+
 
 }
 

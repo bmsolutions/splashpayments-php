@@ -42,7 +42,7 @@ class chargebackMessageResults extends BaseResource {
   public $chargebackMessage;
 
   /**
-   * @integer
+   * @string
    * The type of this chargebackMessageResult.
    */
   public $type;

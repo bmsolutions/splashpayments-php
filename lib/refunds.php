@@ -49,7 +49,7 @@ class refunds extends BaseResource {
   public $description;
 
   /**
-   * @integer
+   * @string
    * The amount of this Refund. 
    * This field is specified as an integer in cents. 
    * This field is optional. If it is not set, then the API uses the amount that is specified in the related Entry resource.

@@ -47,7 +47,7 @@ class messages extends BaseResource {
   public $opposingMessage;
 
   /**
-   * @integer
+   * @string
    * Whether this resource is incoming or outgoing.
    */
   public $type;

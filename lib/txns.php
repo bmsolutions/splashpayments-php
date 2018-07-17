@@ -409,6 +409,36 @@ class txns extends BaseResource {
    */
   public $duty;
 
+  /**
+   * @integer
+   * Whether this Transaction was verified with a PIN.
+   */
+  public $pin;
+
+  /**
+   * @integer
+   */
+  public $traceNumber;
+
+  /**
+   * @string
+   */
+  public $cvvStatus;
+
+  /**
+   * @string
+   * The reason for the auth reversal. 
+   *  This field is set to 'customerCancelled' by default.
+   */
+  public $unauthReason;
+
+  /**
+   * @string
+   * Optional calculated fee amount indicator. This should be used in conjunction with txnFee setting on Fees resource. 
+   * This field is specified as an integer in cents.
+   */
+  public $fee;
+
 
   public function delete($params = array()) {
       throw new \SplashPayments\Exceptions\InvalidRequest('Invalid Action');

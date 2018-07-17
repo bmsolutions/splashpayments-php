@@ -48,7 +48,7 @@ class orgFlows extends BaseResource {
   public $forlogin;
 
   /**
-   * @integer
+   * @string
    * This field sets the trigger that determines when this orgFlow runs.
    */
   public $trigger;

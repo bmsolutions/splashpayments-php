@@ -54,7 +54,7 @@ class decisionRules extends BaseResource {
   public $description;
 
   /**
-   * @integer
+   * @string
    * The type of logic to apply with this Decision Rule.
    */
   public $type;

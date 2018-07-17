@@ -84,6 +84,22 @@ class subscriptions extends BaseResource {
    */
   public $frozen;
 
+  /**
+   * @integer
+   */
+  public $failures;
+
+  /**
+   * @integer
+   */
+  public $maxFailures;
+
+  /**
+   * @integer
+   * The origin of the Txn that will be created through this Subscription.
+   */
+  public $origin;
+
 
 }
 

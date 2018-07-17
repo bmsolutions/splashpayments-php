@@ -76,7 +76,7 @@ class reserves extends BaseResource {
   public $percent;
 
   /**
-   * @integer
+   * @string
    * The schedule that determines when the funds in this Reserve should be released.
    */
   public $release;
