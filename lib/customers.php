@@ -227,6 +227,12 @@ class customers extends BaseResource {
    */
   public $shippingFax;
 
+  /**
+   * @string
+   * Custom, free-form field for client-supplied text, must be between 0 and 1000 characters long.
+   */
+  public $custom;
+
 
 }
 

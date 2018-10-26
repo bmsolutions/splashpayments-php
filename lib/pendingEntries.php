@@ -141,6 +141,26 @@ class pendingEntries extends BaseResource {
    */
   public $pending;
 
+  /**
+   * @string
+   */
+  public $originalCurrency;
+
+  /**
+   * @string
+   */
+  public $currencyRate;
+
+  /**
+   * @string
+   */
+  public $terminalTxn;
+
+  /**
+   * @integer
+   */
+  public $isFee;
+
 
   public function update($params = array()) {
       throw new \SplashPayments\Exceptions\InvalidRequest('Invalid Action');

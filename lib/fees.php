@@ -160,6 +160,12 @@ class fees extends BaseResource {
    */
   public $txnFee;
 
+  /**
+   * @integer
+   * Whether to include the current period for the colleciton calculation.
+   */
+  public $collectionIncludeCurrent;
+
 
 }
 

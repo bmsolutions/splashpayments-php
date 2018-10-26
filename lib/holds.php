@@ -88,6 +88,11 @@ class holds extends BaseResource {
    */
   public $entity;
 
+  /**
+   * @string
+   */
+  public $terminalTxn;
+
 
   public function update($params = array()) {
       throw new \SplashPayments\Exceptions\InvalidRequest('Invalid Action');

@@ -3,8 +3,8 @@ namespace SplashPayments;
 
 use SplashPayments\Exceptions\InvalidRequest;
 
-class txns extends BaseResource {
-  protected $resourceName = "txns";
+class terminalTxns extends BaseResource {
+  protected $resourceName = "terminalTxns";
   /**
    * @string
    * The ID of this resource.
@@ -55,33 +55,9 @@ class txns extends BaseResource {
 
   /**
    * @string
-   * The token of the Tokens resource this Transaction is associated with.
+   * The related txn this terminalTxn belongs to.
    */
-  public $token;
-
-  /**
-   * @string
-   * If this Transaction is related to another Transaction, then this field is set to the identifier of the other Transaction. 
-   * For example, if this Transaction is a refund, this field could be set to the identifier of the original sale Transaction.
-   */
-  public $fortxn;
-
-  /**
-   * @string
-   */
-  public $fromtxn;
-
-  /**
-   * @string
-   * If the Transaction is linked to a Batch, this field specifies the identifier of the Batch.
-   */
-  public $batch;
-
-  /**
-   * @string
-   * The identifier of the Subscription associated with this Transaction.
-   */
-  public $subscription;
+  public $txn;
 
   /**
    * @integer
@@ -104,6 +80,18 @@ class txns extends BaseResource {
   public $currency;
 
   /**
+   * @string
+   */
+  public $fundingCurrency;
+
+  /**
+   * @string
+   * Optional calculated fee amount indicator. This should be used in conjunction with txnFee setting on Fees resource. 
+   * This field is specified as an integer in cents.
+   */
+  public $fee;
+
+  /**
    * @integer
    * The date on which the Transaction was authorized. 
    * The date is specified as an eight digit string in YYYYMMDD format, for example, '20160120' for January 20, 2016. 
@@ -120,41 +108,6 @@ class txns extends BaseResource {
 
   /**
    * @string
-   * A timestamp indicating when this Transaction was captured. 
-   * This field is set automatically.
-   */
-  public $captured;
-
-  /**
-   * @integer
-   * A date indicating when this Transaction was settled. 
-   * This field is set automatically.
-   */
-  public $settled;
-
-  /**
-   * @string
-   * The currency of the settled total. 
-   * This field is set automatically.
-   */
-  public $settledCurrency;
-
-  /**
-   * @integer
-   * The total amount that was settled. 
-   * This field is specified as an integer in cents and is set automatically.
-   */
-  public $settledTotal;
-
-  /**
-   * @integer
-   * Whether to allow partial amount authorizations of this Transaction. 
-   * For example, if the transaction amount is $1000 and the processor only authorizes a smaller amount, then enabling this field  lets the Transaction proceed anyway.
-   */
-  public $allowPartial;
-
-  /**
-   * @string
    * The identifier of the Order associated with this Transaction. 
    * This field is stored as a text string and must be between 0 and 1000 characters long.
    */
@@ -168,11 +121,28 @@ class txns extends BaseResource {
   public $description;
 
   /**
-   * @string
-   * The descriptor used in this Transaction. 
-   * This field is stored as a text string and must be between 1 and 50 characters long. If a value is not set, an attempt is made to set a default value from the merchant information.
+   * @integer
+   * Sequencial number that uniquely identifies the terminalTxn.
    */
-  public $descriptor;
+  public $traceNumber;
+
+  /**
+   * @integer
+   * The discount applied to the transaction.
+   */
+  public $discount;
+
+  /**
+   * @integer
+   * The shipping fee pertaining to this transaction.
+   */
+  public $shipping;
+
+  /**
+   * @integer
+   * The duty fee applicable to this transaction.
+   */
+  public $duty;
 
   /**
    * @string
@@ -196,7 +166,8 @@ class txns extends BaseResource {
 
   /**
    * @integer
-   * The origin of this Transaction.
+   * The origin of this Transaction. 
+   * This field is set to '1' by default.
    */
   public $origin;
 
@@ -241,6 +212,12 @@ class txns extends BaseResource {
   public $cvv;
 
   /**
+   * @string
+   * The status of the CVV on the card.
+   */
+  public $cvvStatus;
+
+  /**
    * @integer
    * Whether the card was swiped during this Transaction. 
    * This field is set to '1' automatically if 'track' data was received.
@@ -255,10 +232,16 @@ class txns extends BaseResource {
 
   /**
    * @integer
-   * Whether a signature was captured during this Transaction. 
-   * You can set this field if you took a signature for the Transaction. The API also sets this field automatically if you associate a signature to the Transaction by creating a 'txnDatas' resource.
+   * Whether a signature should be captured during this Transaction. 
+   * You can set this field if want the terminal to take a signature for the Transaction. The API also sets this field automatically if you associate a signature to the Transaction by creating a 'terminalTxnDatas' resource.
    */
   public $signature;
+
+  /**
+   * @integer
+   * Whether this Transaction was verified with a PIN.
+   */
+  public $pin;
 
   /**
    * @integer
@@ -266,6 +249,18 @@ class txns extends BaseResource {
    * This field is set to '0' by default.
    */
   public $unattended;
+
+  /**
+   * @integer
+   * Whether the terminalTxn is coming from a POS system that needs terminal activation.
+   */
+  public $pos;
+
+  /**
+   * @string
+   * Whether the terminal should print a receipt or not.
+   */
+  public $receipt;
 
   /**
    * @string
@@ -363,34 +358,15 @@ class txns extends BaseResource {
 
   /**
    * @integer
-   * The amount of this Transaction that has been refunded.
-   */
-  public $refunded;
-
-  /**
-   * @integer
    * Indicates whether the Transaction is reserved and the action that will be taken as a result.
    */
   public $reserved;
-
-  /**
-   * @integer
-   * Indicates if an authorization has been misused by not being captured or reversed within the timeframe. The timeframe varies per network, mcc and type of txn closing (capture/reverse auth).
-   */
-  public $misused;
 
   /**
    * @string
    * The last transaction stage check for risk.
    */
   public $checkStage;
-
-  /**
-   * @integer
-   * Whether the txn was imported from a report or not. 
-   * This field is set automatically.
-   */
-  public $imported;
 
   /**
    * @integer
@@ -404,78 +380,6 @@ class txns extends BaseResource {
    */
   public $frozen;
 
-  /**
-   * @integer
-   * The discount applied to the transaction.
-   */
-  public $discount;
-
-  /**
-   * @integer
-   * The shipping fee pertaining to this transaction.
-   */
-  public $shipping;
-
-  /**
-   * @integer
-   * The duty fee applicable to this transaction.
-   */
-  public $duty;
-
-  /**
-   * @integer
-   * Whether this Transaction was verified with a PIN.
-   */
-  public $pin;
-
-  /**
-   * @integer
-   * Sequencial number that uniquely identifies the txn.
-   */
-  public $traceNumber;
-
-  /**
-   * @string
-   * The status of the CVV on the card.
-   */
-  public $cvvStatus;
-
-  /**
-   * @string
-   * The reason for the auth reversal. 
-   *  This field is set to 'customerCancelled' by default.
-   */
-  public $unauthReason;
-
-  /**
-   * @string
-   * Optional calculated fee amount indicator. This should be used in conjunction with txnFee setting on Fees resource. 
-   * This field is specified as an integer in cents.
-   */
-  public $fee;
-
-  /**
-   * @string
-   * The funding currency of the txn.
-   */
-  public $fundingCurrency;
-
-  /**
-   * @string
-   * Authentication token returned by the network in a 3DSecure txn.
-   */
-  public $authentication;
-
-  /**
-   * @string
-   * Optional transaction ID returned by the network in a 3DSecure txn.
-   */
-  public $authenticationId;
-
-
-  public function delete($params = array()) {
-      throw new \SplashPayments\Exceptions\InvalidRequest('Invalid Action');
-  }
 
 }
 

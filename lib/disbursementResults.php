@@ -37,11 +37,13 @@ class disbursementResults extends BaseResource {
 
   /**
    * @string
+   * The identifier of the Disbursement that this disbursementReresult resource refers to.
    */
   public $disbursement;
 
   /**
    * @string
+   * Code.
    */
   public $code;
 
@@ -52,8 +54,20 @@ class disbursementResults extends BaseResource {
 
   /**
    * @string
+   * Message.
    */
   public $message;
+
+  /**
+   * @string
+   */
+  public $disbursementRef;
+
+  /**
+   * @integer
+   * Amount.
+   */
+  public $amount;
 
 
   public function update($params = array()) {

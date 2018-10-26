@@ -3,8 +3,8 @@ namespace SplashPayments;
 
 use SplashPayments\Exceptions\InvalidRequest;
 
-class disbursements extends BaseResource {
-  protected $resourceName = "disbursements";
+class terminalTxnResults extends BaseResource {
+  protected $resourceName = "terminalTxnResults";
   /**
    * @string
    * The ID of this resource.
@@ -37,47 +37,37 @@ class disbursements extends BaseResource {
 
   /**
    * @string
+   * The identifier of the TerminalTxn associated with this terminalTxnResults resource.
    */
-  public $entity;
-
-  /**
-   * @string
-   */
-  public $account;
-
-  /**
-   * @string
-   */
-  public $payout;
-
-  /**
-   * @string
-   */
-  public $description;
+  public $terminalTxn;
 
   /**
    * @integer
+   * The type of this terminalTxnResult.
    */
-  public $amount;
+  public $type;
+
+  /**
+   * @string
+   * A message that accompanies and describes this Transaction result.
+   */
+  public $message;
 
   /**
    * @integer
+   * The result code that is associated with this terminalTxnResult.
    */
-  public $status;
+  public $code;
 
   /**
    * @string
    */
-  public $processed;
+  public $originalCode;
 
   /**
    * @string
    */
-  public $currency;
-
-  /**
-   */
-  public $payment;
+  public $bankCode;
 
 
   public function update($params = array()) {

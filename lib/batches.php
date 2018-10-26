@@ -71,6 +71,11 @@ class batches extends BaseResource {
    */
   public $frozen;
 
+  /**
+   * @string
+   */
+  public $processingDate;
+
 
   public function delete($params = array()) {
       throw new \SplashPayments\Exceptions\InvalidRequest('Invalid Action');

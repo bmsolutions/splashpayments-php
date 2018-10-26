@@ -145,6 +145,17 @@ class terminals extends BaseResource {
    */
   public $phone;
 
+  /**
+   * @string
+   * The serial number of the terminal device.
+   */
+  public $serial;
+
+  /**
+   * @integer
+   */
+  public $cloudEnabled;
+
 
 }
 

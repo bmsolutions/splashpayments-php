@@ -86,6 +86,11 @@ class feeModifiers extends BaseResource {
    */
   public $frozen;
 
+  /**
+   * @string
+   */
+  public $division;
+
 
 }
 

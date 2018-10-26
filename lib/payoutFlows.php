@@ -88,6 +88,8 @@ class payoutFlows extends BaseResource {
 
   /**
    * @integer
+   * The total amount of the Payout resource that is created. 
+   * The units used in this field are determined by the value of the 'um' field on the Payout. If the 'um' field is set to '1' or '3', then this field specifies the Payout percentage to levy in basis points. If the 'um' field is set to '2', then this field specifies the Payout in cents.
    */
   public $amount;
 

@@ -39,7 +39,7 @@ class RequestParams {
     }
   }
 
-  // Retrive the query parameters
+  // Retrieve the query parameters
   public function getExpand() {
     $expand = "";
     foreach ($this->expand as $string) {

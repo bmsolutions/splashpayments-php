@@ -49,6 +49,7 @@ class alertActions extends BaseResource {
 
   /**
    * @string
+   * A value used to deliver the alert. Thie field should be set to an email address if the type is email, an endpoint if the type is web, etc.
    */
   public $value;
 
@@ -57,6 +58,12 @@ class alertActions extends BaseResource {
    * The identifier of the Alert resource that defines this alertAction.
    */
   public $alert;
+
+  /**
+   * @integer
+   * The number of times an alert should be resent in case of a failure. This fields can only be set for web type alertActions.
+   */
+  public $retries;
 
 
 }
