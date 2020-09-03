@@ -1,6 +1,6 @@
 {
   "name": "splashpayments/splashpayments-php",
-  "description": "SplashPayments PHP SDK package",
+  "description": "Deprecated - use https://gitlab.com/payrix/public/payrix-php.git",
   "homepage": "https://portal.splashpayments.com",
   "require": {
     "php": ">=5.4.0",
